@@ -111,8 +111,8 @@ def is_fixture(function: Union[FunctionType, MethodType]) -> Tuple[bool, Optiona
 
 	if not visitor.is_fixture:
 		return False, None
-
-	return True, visitor.scope
+	else:
+		return True, visitor.scope
 
 
 class FixtureDocumenter(FunctionDocumenter):
@@ -167,7 +167,8 @@ class FixtureDocumenter(FunctionDocumenter):
 
 		self.add_line('', self.get_sourcename())
 		self.add_line(
-				f"   **Scope:** |nbsp| |nbsp| |nbsp| |nbsp| {is_fixture(self.object)[1]}", self.get_sourcename()
+				f"   **Scope:** |nbsp| |nbsp| |nbsp| |nbsp| {is_fixture(self.object)[1]}",
+				self.get_sourcename(),
 				)
 
 
