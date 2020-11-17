@@ -29,8 +29,8 @@ Sphinx autodocumenter for pytest fixtures.
 # stdlib
 import ast
 import inspect
-from types import FunctionType
-from typing import Any, Dict, Optional, Tuple
+from types import FunctionType, MethodType
+from typing import Any, Dict, Optional, Tuple, Union
 
 # 3rd party
 from sphinx.application import Sphinx
@@ -67,12 +67,14 @@ class FixtureDecoratorFinder(ast.NodeVisitor):
 			for deco in node.decorator_list:
 
 				if isinstance(deco, ast.Call):
-					keywords: Dict[str, ast.Constant] = {k.arg: k.value for k in deco.keywords}
+					keywords: Dict[Optional[str], ast.expr] = {k.arg: k.value for k in deco.keywords}
 
 					if "scope" in keywords:
 						scope = keywords["scope"]
 						if isinstance(scope, ast.Constant):
 							self.scope = scope.value
+						elif isinstance(scope, ast.Str):
+							self.scope = scope.s
 						else:  # pragma: no cover
 							raise NotImplementedError(type(scope))
 
@@ -92,7 +94,7 @@ class FixtureDecoratorFinder(ast.NodeVisitor):
 					raise NotImplementedError(str(type(deco)))
 
 
-def is_fixture(function: FunctionType) -> Tuple[bool, Optional[str]]:
+def is_fixture(function: Union[FunctionType, MethodType]) -> Tuple[bool, Optional[str]]:
 	"""
 	Returns whether the given function is a fixture, and the fixture's scope if it is.
 
@@ -121,7 +123,7 @@ class FixtureDocumenter(FunctionDocumenter):
 	objtype = "fixture"
 	directivetype = "fixture"
 	priority = 20
-	object: FunctionType  # noqa: A003
+	object: Union[FunctionType, MethodType]  # noqa: A003
 
 	def __init__(self, directive: DocumenterBridge, name: str, indent: str = '') -> None:
 		super().__init__(directive, name, indent)
