@@ -1,4 +1,5 @@
 # 3rd party
+from sphinx.events import EventListener
 from sphinx_toolbox.testing import run_setup
 
 # this package
@@ -13,5 +14,9 @@ def test_setup():
 			}
 
 	assert app.registry.documenters["fixture"] == sphinx_autofixture.FixtureDocumenter
+
+	assert app.events.listeners == {
+			"config-inited": [EventListener(id=0, handler=sphinx_autofixture.validate_config, priority=500)],
+			}
 
 	assert "fixture" in app.registry.domains["py"].object_types

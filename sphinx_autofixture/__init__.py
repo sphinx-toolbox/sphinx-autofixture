@@ -150,7 +150,7 @@ class FixtureDocumenter(FunctionDocumenter):
 
 		if isinstance(member, FunctionType):
 			return is_fixture(member)[0]
-		else:
+		else:  # pragma: no cover
 			return False
 
 	def add_directive_header(self, sig: str = '') -> None:
@@ -203,6 +203,8 @@ def setup(app: Sphinx) -> Dict[str, Any]:
 	app.add_role_to_domain("py", "fixture", PyXRefRole())
 
 	app.add_autodocumenter(FixtureDocumenter)
+
+	app.connect("config-inited", validate_config)
 
 	return {
 			"version": __version__,

@@ -50,26 +50,6 @@
           <strong>
            Scope:
           </strong>
-          <a href="#id1">
-           <span class="problematic" id="id2">
-            |nbsp|
-           </span>
-          </a>
-          <a href="#id3">
-           <span class="problematic" id="id4">
-            |nbsp|
-           </span>
-          </a>
-          <a href="#id5">
-           <span class="problematic" id="id6">
-            |nbsp|
-           </span>
-          </a>
-          <a href="#id7">
-           <span class="problematic" id="id8">
-            |nbsp|
-           </span>
-          </a>
           function
          </p>
          <p>
@@ -124,6 +104,68 @@ created as a sub directory of the base temporary directory.
          </code>
         </a>
        </p>
+       <dl class="py fixture">
+        <dt>
+         <em class="property">
+          fixture
+         </em>
+         <code class="sig-prename descclassname">
+          domdf_python_tools.testing.
+         </code>
+         <code class="sig-name descname">
+          tmp_pathplus
+         </code>
+        </dt>
+        <dd>
+         <p>
+          <strong>
+           Scope:
+          </strong>
+          function
+         </p>
+         <p>
+          Pytest fixture that returns a temporary directory in the form of a
+          <code class="xref py py-class docutils literal notranslate">
+           <span class="pre">
+            PathPlus
+           </span>
+          </code>
+          object.
+         </p>
+         <p>
+          The directory is unique to each test function invocation,
+created as a sub directory of the base temporary directory.
+         </p>
+         <p>
+          Use it as follows:
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">pytest_plugins</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"domdf_python_tools.testing"</span><span class="p">,</span> <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_something</span><span class="p">(</span><span class="n">tmp_pathplus</span><span class="p">:</span> <span class="n">PathPlus</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="kc">True</span>
+</pre>
+          </div>
+         </div>
+         <dl class="field-list simple">
+          <dt class="field-odd">
+           Return type
+          </dt>
+          <dd class="field-odd">
+           <p>
+           </p>
+          </dd>
+         </dl>
+         <div class="versionadded">
+          <p>
+           <span class="versionmodified added">
+            New in version 0.10.0.
+           </span>
+          </p>
+         </div>
+        </dd>
+       </dl>
       </div>
      </div>
     </div>
