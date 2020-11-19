@@ -158,6 +158,7 @@ class FixtureDocumenter(FunctionDocumenter):
 		Add the directive's header.
 
 		:param sig: Unused -- fixtures have no useful signature.
+		:no-default sig:
 		"""
 
 		# doc_lines = (self.object.__doc__ or '').splitlines()
