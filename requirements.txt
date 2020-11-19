@@ -1,1 +1,2 @@
+domdf-python-tools>=1.5.0
 sphinx>=3.3.1

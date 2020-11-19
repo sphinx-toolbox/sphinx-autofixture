@@ -3,7 +3,7 @@ Downloading source code
 =========================
 
 The ``sphinx-autofixture`` source code is available on GitHub,
-and can be accessed from the following URL: https://github.com/domdfcoding/sphinx-autofixture"
+and can be accessed from the following URL: https://github.com/domdfcoding/sphinx-autofixture
 
 If you have ``git`` installed, you can clone the repository with the following command:
 

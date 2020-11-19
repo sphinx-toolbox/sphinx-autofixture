@@ -33,7 +33,9 @@ from types import FunctionType, MethodType
 from typing import Any, Dict, Optional, Tuple, Union
 
 # 3rd party
+from domdf_python_tools.stringlist import StringList
 from sphinx.application import Sphinx
+from sphinx.config import Config
 from sphinx.domains import ObjType
 from sphinx.domains.python import PyClasslike, PyXRefRole
 from sphinx.ext.autodoc import FunctionDocumenter, Options
@@ -62,7 +64,7 @@ class FixtureDecoratorFinder(ast.NodeVisitor):
 		#: If it is, the scope of the fixture.
 		self.scope = "function"
 
-	def visit_FunctionDef(self, node: ast.FunctionDef) -> Any:
+	def visit_FunctionDef(self, node: ast.FunctionDef) -> None:  # noqa: D102
 		if node.decorator_list:
 			for deco in node.decorator_list:
 
@@ -170,6 +172,23 @@ class FixtureDocumenter(FunctionDocumenter):
 				f"   **Scope:** |nbsp| |nbsp| |nbsp| |nbsp| {is_fixture(self.object)[1]}",
 				self.get_sourcename(),
 				)
+
+
+def validate_config(app: Sphinx, config: Config):
+	r"""
+	Validate the provided configuration values.
+
+	:param app: The Sphinx app.
+	:param config:
+	"""
+
+	rst_prolog = StringList(config.rst_prolog or '')
+
+	nbsp_sub = ".. |nbsp| unicode:: 0xA0\n   :trim:"
+	if nbsp_sub not in rst_prolog:
+		rst_prolog.append(nbsp_sub)
+
+	config.rst_prolog = str(rst_prolog)  # type: ignore
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
