@@ -1,6 +1,6 @@
 # 3rd party
 import pytest
-from pytest import fixture
+from pytest import fixture  # noqa: PT013
 
 # this package
 from sphinx_autofixture import is_fixture
@@ -29,7 +29,7 @@ def call_scoped():
 	"""
 
 
-@pytest.fixture
+@pytest.fixture  # noqa: PT001
 def pytest_attribute():
 	"""
 	:return:

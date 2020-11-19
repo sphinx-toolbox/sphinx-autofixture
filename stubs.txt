@@ -1,0 +1,2 @@
+# Type stubs
+git+https://github.com/domdfcoding/pytest-regressions-stubs
