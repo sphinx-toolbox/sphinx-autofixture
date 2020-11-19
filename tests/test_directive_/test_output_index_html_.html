@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   sphinx-autofixture Demo — Python  documentation
+  </title>
+  <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js">
+  </script>
+  <script src="_static/jquery.js">
+  </script>
+  <script src="_static/underscore.js">
+  </script>
+  <script src="_static/doctools.js">
+  </script>
+  <script src="_static/language_data.js">
+  </script>
+  <meta content="width=device-width, initial-scale=0.9, maximum-scale=0.9" name="viewport"/>
+ </head>
+ <body>
+  <div class="document">
+   <div class="documentwrapper">
+    <div class="bodywrapper">
+     <div class="body" role="main">
+      <div class="section" id="sphinx-autofixture-demo">
+       <h1>
+        sphinx-autofixture Demo
+        <a class="headerlink" href="#sphinx-autofixture-demo" title="Permalink to this headline">
+         ¶
+        </a>
+       </h1>
+       <dl class="py fixture">
+        <dt id="domdf_python_tools.testing.tmp_pathplus">
+         <em class="property">
+          fixture
+         </em>
+         <code class="sig-prename descclassname">
+          domdf_python_tools.testing.
+         </code>
+         <code class="sig-name descname">
+          tmp_pathplus
+         </code>
+         <a class="headerlink" href="#domdf_python_tools.testing.tmp_pathplus" title="Permalink to this definition">
+          ¶
+         </a>
+        </dt>
+        <dd>
+         <p>
+          <strong>
+           Scope:
+          </strong>
+          <a href="#id1">
+           <span class="problematic" id="id2">
+            |nbsp|
+           </span>
+          </a>
+          <a href="#id3">
+           <span class="problematic" id="id4">
+            |nbsp|
+           </span>
+          </a>
+          <a href="#id5">
+           <span class="problematic" id="id6">
+            |nbsp|
+           </span>
+          </a>
+          <a href="#id7">
+           <span class="problematic" id="id8">
+            |nbsp|
+           </span>
+          </a>
+          function
+         </p>
+         <p>
+          Pytest fixture that returns a temporary directory in the form of a
+          <code class="xref py py-class docutils literal notranslate">
+           <span class="pre">
+            PathPlus
+           </span>
+          </code>
+          object.
+         </p>
+         <p>
+          The directory is unique to each test function invocation,
+created as a sub directory of the base temporary directory.
+         </p>
+         <p>
+          Use it as follows:
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">pytest_plugins</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"domdf_python_tools.testing"</span><span class="p">,</span> <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_something</span><span class="p">(</span><span class="n">tmp_pathplus</span><span class="p">:</span> <span class="n">PathPlus</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="kc">True</span>
+</pre>
+          </div>
+         </div>
+         <dl class="field-list simple">
+          <dt class="field-odd">
+           Return type
+          </dt>
+          <dd class="field-odd">
+           <p>
+           </p>
+          </dd>
+         </dl>
+         <div class="versionadded">
+          <p>
+           <span class="versionmodified added">
+            New in version 0.10.0.
+           </span>
+          </p>
+         </div>
+        </dd>
+       </dl>
+       <p>
+        <a class="reference internal" href="#domdf_python_tools.testing.tmp_pathplus" title="domdf_python_tools.testing.tmp_pathplus">
+         <code class="xref py py-fixture docutils literal notranslate">
+          <span class="pre">
+           domdf_python_tools.testing.tmp_pathplus
+          </span>
+         </code>
+        </a>
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-label="main navigation" class="sphinxsidebar" role="navigation">
+    <div class="sphinxsidebarwrapper">
+     <h1 class="logo">
+      <a href="#">
+       Python
+      </a>
+     </h1>
+     <h3>
+      Navigation
+     </h3>
+     <div class="relations">
+      <h3>
+       Related Topics
+      </h3>
+      <ul>
+       <li>
+        <a href="#">
+         Documentation overview
+        </a>
+        <ul>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <div id="searchbox" role="search" style="display: none">
+      <h3 id="searchlabel">
+       Quick search
+      </h3>
+      <div class="searchformwrapper">
+       <form action="search.html" class="search" method="get">
+        <input aria-labelledby="searchlabel" name="q" type="text"/>
+        <input type="submit" value="Go"/>
+       </form>
+      </div>
+     </div>
+     <script>
+      $('#searchbox').show(0);
+     </script>
+    </div>
+   </div>
+   <div class="clearer">
+   </div>
+  </div>
+ </body>
+</html>
