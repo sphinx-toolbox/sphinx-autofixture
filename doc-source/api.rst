@@ -1,5 +1,5 @@
 ===================
-sphinx_autofixture
+API Reference
 ===================
 
 .. automodule:: sphinx_autofixture
