@@ -84,7 +84,6 @@ html_theme_path = ["../.."]
 html_show_sourcelink = True  # True will show link to source
 
 html_context = {}
-
 htmlhelp_basename = slug
 
 latex_documents = [("index", f'{slug}.tex', project, author, "manual")]

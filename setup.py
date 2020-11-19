@@ -13,7 +13,7 @@ sys.path.append('.')
 from __pkginfo__ import *  # pylint: disable=wildcard-import
 
 setup(
-		description='Sphinx autodocumenter for pytest fixtures.',
+		description="Sphinx autodocumenter for pytest fixtures.",
 		extras_require=extras_require,
 		install_requires=install_requires,
 		py_modules=[],
