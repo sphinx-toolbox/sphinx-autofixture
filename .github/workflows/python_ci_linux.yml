@@ -72,11 +72,11 @@ jobs:
         working-directory: coverage
 
       - name: Combine Coverage
-        run: |block_template.globals["make_actions_linux_shield"]
+        run: |
           shopt -s globstar
           python -m coverage combine coverage/**/.coverage
 
-      - name: "Upload Combined Coverage Aretfact"
+      - name: "Upload Combined Coverage Artefact"
         uses: actions/upload-artifact@v2
         with:
           name: "combined-coverage"
