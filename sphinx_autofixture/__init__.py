@@ -183,10 +183,11 @@ def validate_config(app: Sphinx, config: Config):
 	:param config:
 	"""
 
-	rst_prolog = StringList(config.rst_prolog or '')
+	rst_prolog: Union[str, StringList] = config.rst_prolog or ''
 
 	nbsp_sub = ".. |nbsp| unicode:: 0xA0\n   :trim:"
 	if nbsp_sub not in rst_prolog:
+		rst_prolog = StringList(rst_prolog)
 		rst_prolog.append(nbsp_sub)
 
 	config.rst_prolog = str(rst_prolog)  # type: ignore
