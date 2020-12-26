@@ -31,3 +31,20 @@ third_party_version_matrix:
   sphinx:
     - 3.2
     - 3.3
+
+keywords:
+  - sphinx
+  - documentation
+  - sphinx-extension
+  - pytest
+
+classifiers:
+ - 'Development Status :: 4 - Beta'
+ - "Framework :: Sphinx :: Extension"
+ - 'Intended Audience :: Developers'
+ - 'Programming Language :: Python'
+ - "Topic :: Documentation"
+ - 'Topic :: Documentation :: Sphinx'
+ - 'Topic :: Software Development :: Documentation'
+ - 'Topic :: Software Development :: Libraries :: Python Modules'
+ - "Topic :: Utilities"
