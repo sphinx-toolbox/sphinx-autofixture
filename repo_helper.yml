@@ -6,11 +6,10 @@ author: 'Dominic Davis-Foster'
 email: 'dominic@davis-foster.co.uk'
 username: "sphinx-toolbox"
 assignee: "domdfcoding"
+primary_conda_channel: 'domdfcoding'
 version: '0.2.1'
 license: 'MIT'
 short_desc: 'Sphinx autodocumenter for pytest fixtures.'
-
-enable_conda: false
 
 python_versions:
  - 3.6
@@ -18,10 +17,11 @@ python_versions:
  - 3.8
  - 3.9
 
-
 sphinx_html_theme: furo
-
 standalone_contrib_guide: true
+
+conda_channels:
+ - conda-forge
 
 extra_sphinx_extensions:
  - sphinx_autofixture

@@ -21,6 +21,8 @@ sphinx-autofixture
 	  - |actions_linux| |actions_windows| |actions_macos| |coveralls|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
+	* - Anaconda
+	  - |conda-version| |conda-platform|
 	* - Activity
 	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
 	* - QA
@@ -84,6 +86,14 @@ sphinx-autofixture
 	:target: https://pypi.org/project/sphinx-autofixture/
 	:alt: PyPI - Wheel
 
+.. |conda-version| image:: https://img.shields.io/conda/v/domdfcoding/sphinx-autofixture?logo=anaconda
+	:target: https://anaconda.org/domdfcoding/sphinx-autofixture
+	:alt: Conda - Package Version
+
+.. |conda-platform| image:: https://img.shields.io/conda/pn/domdfcoding/sphinx-autofixture?label=conda%7Cplatform
+	:target: https://anaconda.org/domdfcoding/sphinx-autofixture
+	:alt: Conda - Platform
+
 .. |license| image:: https://img.shields.io/github/license/sphinx-toolbox/sphinx-autofixture
 	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/blob/master/LICENSE
 	:alt: License
@@ -117,12 +127,27 @@ Installation
 
 .. start installation
 
-``sphinx-autofixture`` can be installed from PyPI.
+``sphinx-autofixture`` can be installed from PyPI or Anaconda.
 
 To install with ``pip``:
 
 .. code-block:: bash
 
 	$ python -m pip install sphinx-autofixture
+
+To install with ``conda``:
+
+	* First add the required channels
+
+	.. code-block:: bash
+
+		$ conda config --add channels http://conda.anaconda.org/conda-forge
+		$ conda config --add channels http://conda.anaconda.org/domdfcoding
+
+	* Then install
+
+	.. code-block:: bash
+
+		$ conda install sphinx-autofixture
 
 .. end installation
