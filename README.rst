@@ -101,7 +101,7 @@ sphinx-autofixture
 .. |language| image:: https://img.shields.io/github/languages/top/sphinx-toolbox/sphinx-autofixture
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/sphinx-toolbox/sphinx-autofixture/v0.2.1
+.. |commits-since| image:: https://img.shields.io/github/commits-since/sphinx-toolbox/sphinx-autofixture/v0.2.2
 	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/pulse
 	:alt: GitHub commits since tagged version
 
