@@ -3,13 +3,13 @@ Downloading source code
 =========================
 
 The ``sphinx-autofixture`` source code is available on GitHub,
-and can be accessed from the following URL: https://github.com/domdfcoding/sphinx-autofixture
+and can be accessed from the following URL: https://github.com/sphinx-toolbox/sphinx-autofixture
 
 If you have ``git`` installed, you can clone the repository with the following command:
 
 .. code-block:: bash
 
-    $ git clone https://github.com/domdfcoding/sphinx-autofixture"
+    $ git clone https://github.com/sphinx-toolbox/sphinx-autofixture"
     > Cloning into 'sphinx-autofixture'...
     > remote: Enumerating objects: 47, done.
     > remote: Counting objects: 100% (47/47), done.

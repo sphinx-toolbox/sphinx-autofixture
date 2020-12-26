@@ -13,7 +13,7 @@ sys.path.append(os.path.abspath(".."))
 # this package
 from __pkginfo__ import __version__
 
-github_username = "domdfcoding"
+github_username = "sphinx-toolbox"
 github_repository = "sphinx-autofixture"
 github_url = f"https://github.com/{github_username}/{github_repository}"
 

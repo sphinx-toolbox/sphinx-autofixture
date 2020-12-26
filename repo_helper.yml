@@ -4,7 +4,8 @@ modname: 'sphinx-autofixture'
 copyright_years: '2020'
 author: 'Dominic Davis-Foster'
 email: 'dominic@davis-foster.co.uk'
-username: 'domdfcoding'
+username: "sphinx-toolbox"
+assignee: "domdfcoding"
 version: '0.2.1'
 license: 'MIT'
 short_desc: 'Sphinx autodocumenter for pytest fixtures.'

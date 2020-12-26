@@ -144,6 +144,6 @@ Installation
 
 View the :ref:`Function Index <genindex>` or browse the `Source Code <_modules/index.html>`__.
 
-`Browse the GitHub Repository <https://github.com/domdfcoding/sphinx-autofixture>`__
+`Browse the GitHub Repository <https://github.com/sphinx-toolbox/sphinx-autofixture>`__
 
 .. end links

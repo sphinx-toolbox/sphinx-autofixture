@@ -32,40 +32,40 @@ sphinx-autofixture
 	:target: https://sphinx-autofixture.readthedocs.io/en/latest
 	:alt: Documentation Build Status
 
-.. |docs_check| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/Docs%20Check/badge.svg
-	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22Docs+Check%22
+.. |docs_check| image:: https://github.com/sphinx-toolbox/sphinx-autofixture/workflows/Docs%20Check/badge.svg
+	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
 
-.. |actions_linux| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/Linux/badge.svg
-	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22Linux%22
+.. |actions_linux| image:: https://github.com/sphinx-toolbox/sphinx-autofixture/workflows/Linux/badge.svg
+	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/actions?query=workflow%3A%22Linux%22
 	:alt: Linux Test Status
 
-.. |actions_windows| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/Windows/badge.svg
-	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22Windows%22
+.. |actions_windows| image:: https://github.com/sphinx-toolbox/sphinx-autofixture/workflows/Windows/badge.svg
+	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/actions?query=workflow%3A%22Windows%22
 	:alt: Windows Test Status
 
-.. |actions_macos| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/macOS/badge.svg
-	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22macOS%22
+.. |actions_macos| image:: https://github.com/sphinx-toolbox/sphinx-autofixture/workflows/macOS/badge.svg
+	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/actions?query=workflow%3A%22macOS%22
 	:alt: macOS Test Status
 
-.. |actions_flake8| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/Flake8/badge.svg
-	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22Flake8%22
+.. |actions_flake8| image:: https://github.com/sphinx-toolbox/sphinx-autofixture/workflows/Flake8/badge.svg
+	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/actions?query=workflow%3A%22Flake8%22
 	:alt: Flake8 Status
 
-.. |actions_mypy| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/mypy/badge.svg
-	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22mypy%22
+.. |actions_mypy| image:: https://github.com/sphinx-toolbox/sphinx-autofixture/workflows/mypy/badge.svg
+	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://requires.io/github/domdfcoding/sphinx-autofixture/requirements.svg?branch=master
-	:target: https://requires.io/github/domdfcoding/sphinx-autofixture/requirements/?branch=master
+.. |requires| image:: https://requires.io/github/sphinx-toolbox/sphinx-autofixture/requirements.svg?branch=master
+	:target: https://requires.io/github/sphinx-toolbox/sphinx-autofixture/requirements/?branch=master
 	:alt: Requirements Status
 
-.. |coveralls| image:: https://img.shields.io/coveralls/github/domdfcoding/sphinx-autofixture/master?logo=coveralls
-	:target: https://coveralls.io/github/domdfcoding/sphinx-autofixture?branch=master
+.. |coveralls| image:: https://img.shields.io/coveralls/github/sphinx-toolbox/sphinx-autofixture/master?logo=coveralls
+	:target: https://coveralls.io/github/sphinx-toolbox/sphinx-autofixture?branch=master
 	:alt: Coverage
 
-.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/domdfcoding/sphinx-autofixture?logo=codefactor
-	:target: https://www.codefactor.io/repository/github/domdfcoding/sphinx-autofixture
+.. |codefactor| image:: https://img.shields.io/codefactor/grade/github/sphinx-toolbox/sphinx-autofixture?logo=codefactor
+	:target: https://www.codefactor.io/repository/github/sphinx-toolbox/sphinx-autofixture
 	:alt: CodeFactor Grade
 
 .. |pypi-version| image:: https://img.shields.io/pypi/v/sphinx-autofixture
@@ -84,19 +84,19 @@ sphinx-autofixture
 	:target: https://pypi.org/project/sphinx-autofixture/
 	:alt: PyPI - Wheel
 
-.. |license| image:: https://img.shields.io/github/license/domdfcoding/sphinx-autofixture
-	:target: https://github.com/domdfcoding/sphinx-autofixture/blob/master/LICENSE
+.. |license| image:: https://img.shields.io/github/license/sphinx-toolbox/sphinx-autofixture
+	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/blob/master/LICENSE
 	:alt: License
 
-.. |language| image:: https://img.shields.io/github/languages/top/domdfcoding/sphinx-autofixture
+.. |language| image:: https://img.shields.io/github/languages/top/sphinx-toolbox/sphinx-autofixture
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/domdfcoding/sphinx-autofixture/v0.2.1
-	:target: https://github.com/domdfcoding/sphinx-autofixture/pulse
+.. |commits-since| image:: https://img.shields.io/github/commits-since/sphinx-toolbox/sphinx-autofixture/v0.2.1
+	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/pulse
 	:alt: GitHub commits since tagged version
 
-.. |commits-latest| image:: https://img.shields.io/github/last-commit/domdfcoding/sphinx-autofixture
-	:target: https://github.com/domdfcoding/sphinx-autofixture/commit/master
+.. |commits-latest| image:: https://img.shields.io/github/last-commit/sphinx-toolbox/sphinx-autofixture
+	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/commit/master
 	:alt: GitHub last commit
 
 .. |maintained| image:: https://img.shields.io/maintenance/yes/2020
@@ -106,8 +106,8 @@ sphinx-autofixture
 	:target: https://pypi.org/project/sphinx-autofixture/
 	:alt: PyPI - Downloads
 
-.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/sphinx-autofixture/master.svg
-	:target: https://results.pre-commit.ci/latest/github/domdfcoding/sphinx-autofixture/master
+.. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/sphinx-toolbox/sphinx-autofixture/master.svg
+	:target: https://results.pre-commit.ci/latest/github/sphinx-toolbox/sphinx-autofixture/master
 	:alt: pre-commit.ci status
 
 .. end shields
