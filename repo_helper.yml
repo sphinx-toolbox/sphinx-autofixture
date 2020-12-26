@@ -24,3 +24,9 @@ standalone_contrib_guide: true
 
 extra_sphinx_extensions:
  - sphinx_autofixture
+
+
+third_party_version_matrix:
+  sphinx:
+    - 3.2
+    - 3.3
