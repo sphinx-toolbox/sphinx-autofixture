@@ -18,33 +18,43 @@ sphinx-autofixture
 	* - Docs
 	  - |docs| |docs_check|
 	* - Tests
-	  - |travis| |actions_windows| |actions_macos| |coveralls| |codefactor| |pre_commit_ci|
+	  - |actions_linux| |actions_windows| |actions_macos| |coveralls|
 	* - PyPI
 	  - |pypi-version| |supported-versions| |supported-implementations| |wheel|
 	* - Activity
-	  - |commits-latest| |commits-since| |maintained|
+	  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
+	* - QA
+	  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
 	* - Other
-	  - |license| |language| |requires| |pre_commit|
+	  - |license| |language| |requires|
 
 .. |docs| image:: https://img.shields.io/readthedocs/sphinx-autofixture/latest?logo=read-the-docs
-	:target: https://sphinx-autofixture.readthedocs.io/en/latest/?badge=latest
+	:target: https://sphinx-autofixture.readthedocs.io/en/latest
 	:alt: Documentation Build Status
 
 .. |docs_check| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/Docs%20Check/badge.svg
 	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22Docs+Check%22
 	:alt: Docs Check Status
 
-.. |travis| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/Linux%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22Linux+Tests%22
+.. |actions_linux| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/Linux/badge.svg
+	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22Linux%22
 	:alt: Linux Test Status
 
-.. |actions_windows| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/Windows%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22Windows+Tests%22
+.. |actions_windows| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/Windows/badge.svg
+	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22Windows%22
 	:alt: Windows Test Status
 
-.. |actions_macos| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/macOS%20Tests/badge.svg
-	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22macOS+Tests%22
+.. |actions_macos| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/macOS/badge.svg
+	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22macOS%22
 	:alt: macOS Test Status
+
+.. |actions_flake8| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/Flake8/badge.svg
+	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22Flake8%22
+	:alt: Flake8 Status
+
+.. |actions_mypy| image:: https://github.com/domdfcoding/sphinx-autofixture/workflows/mypy/badge.svg
+	:target: https://github.com/domdfcoding/sphinx-autofixture/actions?query=workflow%3A%22mypy%22
+	:alt: mypy status
 
 .. |requires| image:: https://requires.io/github/domdfcoding/sphinx-autofixture/requirements.svg?branch=master
 	:target: https://requires.io/github/domdfcoding/sphinx-autofixture/requirements/?branch=master
@@ -92,9 +102,9 @@ sphinx-autofixture
 .. |maintained| image:: https://img.shields.io/maintenance/yes/2020
 	:alt: Maintenance
 
-.. |pre_commit| image:: https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white
-	:target: https://github.com/pre-commit/pre-commit
-	:alt: pre-commit
+.. |pypi-downloads| image:: https://img.shields.io/pypi/dm/sphinx-autofixture
+	:target: https://pypi.org/project/sphinx-autofixture/
+	:alt: PyPI - Downloads
 
 .. |pre_commit_ci| image:: https://results.pre-commit.ci/badge/github/domdfcoding/sphinx-autofixture/master.svg
 	:target: https://results.pre-commit.ci/latest/github/domdfcoding/sphinx-autofixture/master
