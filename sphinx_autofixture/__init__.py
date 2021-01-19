@@ -103,10 +103,20 @@ def is_fixture(function: Union[FunctionType, MethodType]) -> Tuple[bool, Optiona
 	:param function:
 	"""
 
+	if "<locals>" in function.__qualname__:
+		# Can't get source code for these (issue #6)
+		return False, None
+
 	visitor = FixtureDecoratorFinder()
 
 	try:
-		visitor.visit(ast.parse(inspect.getsource(function)))
+		source = inspect.getsource(function)
+	except OSError:
+		# May be encountered when trying to parse a function defined in <locals> (issue #6)
+		return False, None
+
+	try:
+		visitor.visit(ast.parse(source))
 	except IndentationError:
 		# Triggered when trying to parse a method
 		return False, None
