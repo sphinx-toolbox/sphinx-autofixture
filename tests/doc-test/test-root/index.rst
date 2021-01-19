@@ -10,3 +10,8 @@ sphinx-autofixture Demo
 	:members: tmp_pathplus
 	:noindex:
 	:no-docstring:
+
+.. automodule:: tests.myproject
+	:members:
+	:undoc-members:
+	:special-members:
