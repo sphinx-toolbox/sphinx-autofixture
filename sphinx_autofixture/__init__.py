@@ -125,7 +125,7 @@ class FixtureDocumenter(FunctionDocumenter):
 	objtype = "fixture"
 	directivetype = "fixture"
 	priority = 20
-	object: Union[FunctionType, MethodType]  # noqa: A003
+	object: Union[FunctionType, MethodType]  # noqa: A003  # pylint: disable=redefined-builtin
 
 	def __init__(self, directive: DocumenterBridge, name: str, indent: str = '') -> None:
 		super().__init__(directive, name, indent)
