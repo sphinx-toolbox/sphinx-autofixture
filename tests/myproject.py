@@ -34,7 +34,7 @@ baz = foo()
 
 def create_fizbuzz():
 	# Based on the dataclass module from CPython
-	locals = {"BUILTINS": builtins}
+	locals = {"BUILTINS": builtins}  # noqa: A001
 	local_vars = ", ".join(locals.keys())
 
 	txt = f" def fizbuzz(): pass"
