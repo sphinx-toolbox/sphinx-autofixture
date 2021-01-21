@@ -103,6 +103,8 @@ def is_fixture(function: Union[FunctionType, MethodType]) -> Tuple[bool, Optiona
 	:param function:
 	"""
 
+	# TODO: should this be relaxed? It seems inspect.getsource can find these after all.
+	#  But can they work as fixtures?
 	if "<locals>" in function.__qualname__:
 		# Can't get source code for these (issue #6)
 		return False, None
@@ -112,7 +114,7 @@ def is_fixture(function: Union[FunctionType, MethodType]) -> Tuple[bool, Optiona
 	try:
 		source = inspect.getsource(function)
 	except OSError:
-		# May be encountered when trying to parse a function defined in <locals> (issue #6)
+		# May be encountered with dataclasses where there's no source for the dynamic methods (issue #6)
 		return False, None
 
 	try:
