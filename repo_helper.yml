@@ -20,6 +20,7 @@ python_versions:
  - pypy36
  - pypy37
 
+use_whey: true
 sphinx_html_theme: furo
 standalone_contrib_guide: true
 

@@ -1,6 +1,6 @@
 [build-system]
-requires = [ "setuptools>=40.6.0", "wheel>=0.34.2",]
-build-backend = "setuptools.build_meta"
+requires = [ "whey",]
+build-backend = "whey"
 
 [project]
 name = "sphinx-autofixture"
@@ -21,3 +21,20 @@ Homepage = "https://github.com/sphinx-toolbox/sphinx-autofixture"
 "Issue Tracker" = "https://github.com/sphinx-toolbox/sphinx-autofixture/issues"
 "Source Code" = "https://github.com/sphinx-toolbox/sphinx-autofixture"
 Documentation = "https://sphinx-autofixture.readthedocs.io/en/latest"
+
+[tool.whey]
+base-classifiers = [
+    "Development Status :: 4 - Beta",
+    "Framework :: Sphinx :: Extension",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python",
+    "Topic :: Documentation",
+    "Topic :: Documentation :: Sphinx",
+    "Topic :: Software Development :: Documentation",
+    "Typing :: Typed",
+]
+python-versions = [ "3.6", "3.7", "3.8", "3.9",]
+python-implementations = [ "CPython", "PyPy",]
+platforms = [ "Windows", "macOS", "Linux",]
+license-key = "MIT"
+package = "sphinx_autofixture"
