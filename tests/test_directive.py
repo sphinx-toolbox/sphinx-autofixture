@@ -6,7 +6,7 @@ from pathlib import Path
 import pytest
 from bs4 import BeautifulSoup  # type: ignore
 from domdf_python_tools.paths import PathPlus
-from domdf_python_tools.testing import min_version, only_version
+from domdf_python_tools.testing import max_version, min_version, not_pypy, only_pypy, only_version
 from pytest_regressions.file_regression import FileRegressionFixture
 from sphinx.testing.path import path
 from sphinx_toolbox.testing import check_html_regression
@@ -41,19 +41,47 @@ def original_datadir(request) -> Path:
 	return PathPlus(os.path.splitext(request.module.__file__)[0] + '_')
 
 
-@only_version("3.6", reason="Output differs on 3.6")
 @pytest.mark.parametrize("page", ["index.html"], indirect=True)
-def test_output_36(page: BeautifulSoup, file_regression: FileRegressionFixture):
-	check_html_regression(page, file_regression)
-
-
-@only_version("3.7", reason="Output differs on 3.7")
-@pytest.mark.parametrize("page", ["index.html"], indirect=True)
-def test_output_37(page: BeautifulSoup, file_regression: FileRegressionFixture):
-	check_html_regression(page, file_regression)
-
-
-@min_version("3.8", reason="Output differs on 3.6-3.7")
-@pytest.mark.parametrize("page", ["index.html"], indirect=True)
-def test_output(page: BeautifulSoup, file_regression: FileRegressionFixture):
+@pytest.mark.parametrize(
+		"version",
+		[
+				pytest.param(
+						"36",
+						marks=[
+								only_version("3.6", reason="Output differs on 3.6"),
+								not_pypy("Output differs on PyPy")
+								]
+						),
+				pytest.param(
+						"37",
+						marks=[
+								only_version("3.7", reason="Output differs on 3.7"),
+								not_pypy("Output differs on PyPy")
+								]
+						),
+				pytest.param(
+						"36-pypy",
+						marks=[
+								only_version("3.6", reason="Output differs on 3.6"),
+								only_pypy("Output differs on PyPy")
+								]
+						),
+				pytest.param(
+						"37-pypy",
+						marks=[
+								only_version("3.7", reason="Output differs on 3.7"),
+								only_pypy("Output differs on PyPy")
+								]
+						),
+				pytest.param(
+						"38",
+						marks=[
+								min_version("3.8", reason="Output differs on 3.6-3.7"),
+								max_version("3.9.99", reason="Output differs on 3.10")
+								]
+						),
+				pytest.param("310", marks=only_version("3.10", reason="Output differs on 3.10")),
+				]
+		)
+def test_output(page: BeautifulSoup, file_regression: FileRegressionFixture, version):
 	check_html_regression(page, file_regression)

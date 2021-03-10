@@ -16,6 +16,9 @@ python_versions:
  - 3.7
  - 3.8
  - 3.9
+ - 3.10-dev
+ - pypy36
+ - pypy37
 
 sphinx_html_theme: furo
 standalone_contrib_guide: true
@@ -25,7 +28,6 @@ conda_channels:
 
 extra_sphinx_extensions:
  - sphinx_autofixture
-
 
 third_party_version_matrix:
   sphinx:

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   sphinx-autofixture Demo — Python  documentation
+  </title>
+  <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js">
+  </script>
+  <script src="_static/jquery.js">
+  </script>
+  <script src="_static/underscore.js">
+  </script>
+  <script src="_static/doctools.js">
+  </script>
+  <meta content="width=device-width, initial-scale=0.9, maximum-scale=0.9" name="viewport"/>
+ </head>
+ <body>
+  <div class="document">
+   <div class="documentwrapper">
+    <div class="bodywrapper">
+     <div class="body" role="main">
+      <div class="section" id="sphinx-autofixture-demo">
+       <h1>
+        sphinx-autofixture Demo
+        <a class="headerlink" href="#sphinx-autofixture-demo" title="Permalink to this headline">
+         ¶
+        </a>
+       </h1>
+       <dl class="py fixture">
+        <dt id="domdf_python_tools.testing.tmp_pathplus">
+         <em class="property">
+          fixture
+         </em>
+         <code class="sig-prename descclassname">
+          domdf_python_tools.testing.
+         </code>
+         <code class="sig-name descname">
+          tmp_pathplus
+         </code>
+         <a class="headerlink" href="#domdf_python_tools.testing.tmp_pathplus" title="Permalink to this definition">
+          ¶
+         </a>
+        </dt>
+        <dd>
+         <p>
+          <strong>
+           Scope:
+          </strong>
+          function
+         </p>
+         <p>
+          Pytest fixture that returns a temporary directory in the form of a
+          <code class="xref py py-class docutils literal notranslate">
+           <span class="pre">
+            PathPlus
+           </span>
+          </code>
+          object.
+         </p>
+         <p>
+          The directory is unique to each test function invocation,
+created as a sub directory of the base temporary directory.
+         </p>
+         <p>
+          Use it as follows:
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">pytest_plugins</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"domdf_python_tools.testing"</span><span class="p">,</span> <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_something</span><span class="p">(</span><span class="n">tmp_pathplus</span><span class="p">:</span> <span class="n">PathPlus</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="kc">True</span>
+</pre>
+          </div>
+         </div>
+         <div class="versionadded">
+          <p>
+           <span class="versionmodified added">
+            New in version 0.10.0.
+           </span>
+          </p>
+         </div>
+        </dd>
+       </dl>
+       <p>
+        <a class="reference internal" href="#domdf_python_tools.testing.tmp_pathplus" title="domdf_python_tools.testing.tmp_pathplus">
+         <code class="xref py py-fixture docutils literal notranslate">
+          <span class="pre">
+           domdf_python_tools.testing.tmp_pathplus
+          </span>
+         </code>
+        </a>
+       </p>
+       <dl class="py fixture">
+        <dt>
+         <em class="property">
+          fixture
+         </em>
+         <code class="sig-prename descclassname">
+          domdf_python_tools.testing.
+         </code>
+         <code class="sig-name descname">
+          tmp_pathplus
+         </code>
+        </dt>
+        <dd>
+         <p>
+          <strong>
+           Scope:
+          </strong>
+          function
+         </p>
+         <p>
+          Pytest fixture that returns a temporary directory in the form of a
+          <code class="xref py py-class docutils literal notranslate">
+           <span class="pre">
+            PathPlus
+           </span>
+          </code>
+          object.
+         </p>
+         <p>
+          The directory is unique to each test function invocation,
+created as a sub directory of the base temporary directory.
+         </p>
+         <p>
+          Use it as follows:
+         </p>
+         <div class="highlight-python notranslate">
+          <div class="highlight">
+           <pre><span></span><span class="n">pytest_plugins</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"domdf_python_tools.testing"</span><span class="p">,</span> <span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">test_something</span><span class="p">(</span><span class="n">tmp_pathplus</span><span class="p">:</span> <span class="n">PathPlus</span><span class="p">):</span>
+        <span class="k">assert</span> <span class="kc">True</span>
+</pre>
+          </div>
+         </div>
+         <div class="versionadded">
+          <p>
+           <span class="versionmodified added">
+            New in version 0.10.0.
+           </span>
+          </p>
+         </div>
+        </dd>
+       </dl>
+       <span class="target" id="module-tests.myproject">
+       </span>
+       <dl class="py class">
+        <dt id="tests.myproject.A">
+         <em class="property">
+          class
+         </em>
+         <code class="sig-prename descclassname">
+          tests.myproject.
+         </code>
+         <code class="sig-name descname">
+          A
+         </code>
+         <a class="headerlink" href="#tests.myproject.A" title="Permalink to this definition">
+          ¶
+         </a>
+        </dt>
+        <dd>
+         <p>
+          My Dataclass
+         </p>
+         <dl class="py attribute">
+          <dt id="tests.myproject.A.__dataclass_fields__">
+           <code class="sig-name descname">
+            __dataclass_fields__
+           </code>
+           <em class="property">
+            = {}
+           </em>
+           <a class="headerlink" href="#tests.myproject.A.__dataclass_fields__" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py attribute">
+          <dt id="tests.myproject.A.__dataclass_params__">
+           <code class="sig-name descname">
+            __dataclass_params__
+           </code>
+           <em class="property">
+            = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)
+           </em>
+           <a class="headerlink" href="#tests.myproject.A.__dataclass_params__" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py attribute">
+          <dt id="tests.myproject.A.__dict__">
+           <code class="sig-name descname">
+            __dict__
+           </code>
+           <em class="property">
+            = mappingproxy({'__module__': 'tests.myproject', '__doc__': '\n\t\tMy Dataclass\n\t\t', '__dict__': &lt;getset_descriptor object&gt;, '__weakref__': &lt;getset_descriptor object&gt;, '__dataclass_params__': _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False), '__dataclass_fields__': {}, '__init__': &lt;function __create_fn__.&lt;locals&gt;.__init__&gt;, '__repr__': &lt;function __create_fn__.&lt;locals&gt;.__repr__&gt;, '__eq__': &lt;function __create_fn__.&lt;locals&gt;.__eq__&gt;, '__hash__': None})
+           </em>
+           <a class="headerlink" href="#tests.myproject.A.__dict__" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt id="tests.myproject.A.__eq__">
+           <code class="sig-name descname">
+            __eq__
+           </code>
+           <span class="sig-paren">
+            (
+           </span>
+           <em class="sig-param">
+            <span class="n">
+             other
+            </span>
+           </em>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#tests.myproject.A.__eq__" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py attribute">
+          <dt id="tests.myproject.A.__hash__">
+           <code class="sig-name descname">
+            __hash__
+           </code>
+           <em class="property">
+            = None
+           </em>
+           <a class="headerlink" href="#tests.myproject.A.__hash__" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt id="tests.myproject.A.__init__">
+           <code class="sig-name descname">
+            __init__
+           </code>
+           <span class="sig-paren">
+            (
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           → None
+           <a class="headerlink" href="#tests.myproject.A.__init__" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py attribute">
+          <dt id="tests.myproject.A.__module__">
+           <code class="sig-name descname">
+            __module__
+           </code>
+           <em class="property">
+            = 'tests.myproject'
+           </em>
+           <a class="headerlink" href="#tests.myproject.A.__module__" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py method">
+          <dt id="tests.myproject.A.__repr__">
+           <code class="sig-name descname">
+            __repr__
+           </code>
+           <span class="sig-paren">
+            (
+           </span>
+           <span class="sig-paren">
+            )
+           </span>
+           <a class="headerlink" href="#tests.myproject.A.__repr__" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+         <dl class="py attribute">
+          <dt id="tests.myproject.A.__weakref__">
+           <code class="sig-name descname">
+            __weakref__
+           </code>
+           <em class="property">
+            = None
+           </em>
+           <a class="headerlink" href="#tests.myproject.A.__weakref__" title="Permalink to this definition">
+            ¶
+           </a>
+          </dt>
+          <dd>
+          </dd>
+         </dl>
+        </dd>
+       </dl>
+       <dl class="py function">
+        <dt id="tests.myproject.baz">
+         <code class="sig-prename descclassname">
+          tests.myproject.
+         </code>
+         <code class="sig-name descname">
+          baz
+         </code>
+         <span class="sig-paren">
+          (
+         </span>
+         <span class="sig-paren">
+          )
+         </span>
+         <a class="headerlink" href="#tests.myproject.baz" title="Permalink to this definition">
+          ¶
+         </a>
+        </dt>
+        <dd>
+         <p>
+          A locally defined function.
+         </p>
+        </dd>
+       </dl>
+       <dl class="py function">
+        <dt id="tests.myproject.fizbuzz">
+         <code class="sig-prename descclassname">
+          tests.myproject.
+         </code>
+         <code class="sig-name descname">
+          fizbuzz
+         </code>
+         <span class="sig-paren">
+          (
+         </span>
+         <span class="sig-paren">
+          )
+         </span>
+         <a class="headerlink" href="#tests.myproject.fizbuzz" title="Permalink to this definition">
+          ¶
+         </a>
+        </dt>
+        <dd>
+         <p>
+          A locally defined function.
+         </p>
+        </dd>
+       </dl>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div aria-label="main navigation" class="sphinxsidebar" role="navigation">
+    <div class="sphinxsidebarwrapper">
+     <h1 class="logo">
+      <a href="#">
+       Python
+      </a>
+     </h1>
+     <h3>
+      Navigation
+     </h3>
+     <div class="relations">
+      <h3>
+       Related Topics
+      </h3>
+      <ul>
+       <li>
+        <a href="#">
+         Documentation overview
+        </a>
+        <ul>
+        </ul>
+       </li>
+      </ul>
+     </div>
+     <div id="searchbox" role="search" style="display: none">
+      <h3 id="searchlabel">
+       Quick search
+      </h3>
+      <div class="searchformwrapper">
+       <form action="search.html" class="search" method="get">
+        <input aria-labelledby="searchlabel" name="q" type="text"/>
+        <input type="submit" value="Go"/>
+       </form>
+      </div>
+     </div>
+     <script>
+      $('#searchbox').show(0);
+     </script>
+    </div>
+   </div>
+   <div class="clearer">
+   </div>
+  </div>
+ </body>
+</html>
