@@ -8,6 +8,11 @@ sphinx-autofixture
 
 .. end short_desc
 
+See `the documentation`_ for an example of the output with the Furo Sphinx theme,
+and `the documentation for coincidence`_ for an example with the ReadTheDocs theme.
+
+.. _the documentation: https://sphinx-autofixture.readthedocs.io/en/latest/usage.html#directive-autofixture
+.. _the documentation for coincidence: https://coincidence.readthedocs.io/en/latest/api/fixtures.html
 
 .. start shields
 
