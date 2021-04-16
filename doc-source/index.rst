@@ -27,7 +27,7 @@ sphinx-autofixture
 		* - Activity
 		  - |commits-latest| |commits-since| |maintained| |pypi-downloads|
 		* - QA
-		  - |codefactor| |actions_flake8| |actions_mypy| |pre_commit_ci|
+		  - |codefactor| |actions_flake8| |actions_mypy|
 		* - Other
 		  - |license| |language| |requires|
 
@@ -119,9 +119,6 @@ sphinx-autofixture
 		:project: sphinx-autofixture
 		:downloads: month
 		:alt: PyPI - Downloads
-
-	.. |pre_commit_ci| pre-commit-ci-shield::
-		:alt: pre-commit.ci status
 
 .. end shields
 
