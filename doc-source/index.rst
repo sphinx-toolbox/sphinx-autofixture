@@ -135,6 +135,12 @@ Installation
 
 .. end installation
 
+Contents
+--------
+
+.. html-section::
+
+
 .. toctree::
 	:hidden:
 
@@ -142,12 +148,9 @@ Installation
 
 .. toctree::
 	:maxdepth: 3
-	:caption: Documentation
-	:glob:
 
 	usage
 	api
-	contributing
 	Source
 
 

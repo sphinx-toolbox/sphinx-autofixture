@@ -30,6 +30,7 @@ conda_channels:
 
 extra_sphinx_extensions:
  - sphinx_autofixture
+ - html_section
 
 third_party_version_matrix:
   sphinx:
@@ -50,3 +51,8 @@ classifiers:
  - "Topic :: Documentation"
  - 'Topic :: Documentation :: Sphinx'
  - 'Topic :: Software Development :: Documentation'
+
+exclude_files:
+ - contributing
+
+preserve_custom_theme: true
