@@ -1,2 +1,2 @@
 domdf-python-tools>=1.5.0
-sphinx<3.4.0,>=3.0.3
+sphinx>=3.0.3,<4.2.0
