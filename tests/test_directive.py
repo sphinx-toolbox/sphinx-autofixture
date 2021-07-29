@@ -4,9 +4,9 @@ from pathlib import Path
 
 # 3rd party
 import pytest
-from bs4 import BeautifulSoup  # type: ignore
+from bs4 import BeautifulSoup, element  # type: ignore
 from domdf_python_tools.paths import PathPlus
-from domdf_python_tools.testing import max_version, min_version, not_pypy, only_pypy, only_version
+from coincidence import max_version, min_version, not_pypy, only_pypy, only_version
 from pytest_regressions.file_regression import FileRegressionFixture
 from sphinx.testing.path import path
 from sphinx_toolbox.testing import check_html_regression
