@@ -2,11 +2,11 @@
 sphinx-autofixture Demo
 =========================
 
-.. autofixture:: domdf_python_tools.testing.tmp_pathplus
+.. autofixture:: coincidence.fixtures.tmp_pathplus
 
-:fixture:`domdf_python_tools.testing.tmp_pathplus`
+:fixture:`coincidence.fixtures.tmp_pathplus`
 
-.. automodule:: domdf_python_tools.testing
+.. automodule:: coincidence.fixtures
 	:members: tmp_pathplus
 	:noindex:
 	:no-docstring:
