@@ -5,8 +5,8 @@ from pathlib import Path
 # 3rd party
 import pytest
 from bs4 import BeautifulSoup, element  # type: ignore
-from domdf_python_tools.paths import PathPlus
 from coincidence import max_version, min_version, not_pypy, only_pypy, only_version
+from domdf_python_tools.paths import PathPlus
 from pytest_regressions.file_regression import FileRegressionFixture
 from sphinx.testing.path import path
 from sphinx_toolbox.testing import check_html_regression
@@ -84,4 +84,16 @@ def original_datadir(request) -> Path:
 				]
 		)
 def test_output(page: BeautifulSoup, file_regression: FileRegressionFixture, version):
+
+	code: element.Tag
+	for code in page.find_all("code", attrs={"class": "sig-prename descclassname"}):
+		first_child = code.contents[0]
+		if isinstance(first_child, element.Tag):
+			code.contents = [first_child.contents[0]]
+
+	for code in page.find_all("code", attrs={"class": "sig-name descname"}):
+		first_child = code.contents[0]
+		if isinstance(first_child, element.Tag):
+			code.contents = [first_child.contents[0]]
+
 	check_html_regression(page, file_regression)

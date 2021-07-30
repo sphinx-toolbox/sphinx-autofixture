@@ -26,7 +26,7 @@ Usage
 
 			.. code-block:: python
 
-				pytest_plugins = ("domdf_python_tools.testing", )
+				pytest_plugins = ("coincidence", )
 
 				def test_something(tmp_pathplus: PathPlus):
 					assert True
@@ -40,7 +40,7 @@ Usage
 
 	.. rest-example::
 
-		.. autofixture:: domdf_python_tools.testing.tmp_pathplus
+		.. autofixture:: coincidence.tmp_pathplus
 
 
 	.. tip:: :rst:dir:`autofixture` can also be used with :rst:dir:`automodule`.
