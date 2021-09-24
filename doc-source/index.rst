@@ -155,6 +155,14 @@ Contents
 	Source
 
 
+.. sidebar-links::
+	:caption: Links
+	:github:
+	:pypi: sphinx-autofixture
+
+	Contributing Guide <https://contributing-to-sphinx-toolbox.readthedocs.io>
+	license
+
 .. start links
 
 .. only:: html
