@@ -6,7 +6,7 @@ from sphinx_toolbox.testing import run_setup
 import sphinx_autofixture
 
 
-def test_setup():
+def test_setup() -> None:
 	setup_ret, directives, roles, additional_nodes, app = run_setup(sphinx_autofixture.setup)
 	assert setup_ret == {
 			"version": sphinx_autofixture.__version__,

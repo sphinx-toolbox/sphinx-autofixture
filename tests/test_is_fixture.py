@@ -1,3 +1,7 @@
+# stdlib
+from types import FunctionType, MethodType
+from typing import Any, Union
+
 # 3rd party
 import pytest
 from pytest import fixture  # noqa: PT013
@@ -7,14 +11,14 @@ from sphinx_autofixture import is_fixture
 
 
 @fixture
-def name():
+def name() -> None:
 	"""
 	:return:
 	"""
 
 
 @fixture()
-def call():
+def call() -> None:
 	"""
 
 	:return:
@@ -22,7 +26,7 @@ def call():
 
 
 @fixture(scope="module")
-def call_scoped():
+def call_scoped() -> None:
 	"""
 
 	:return:
@@ -30,14 +34,14 @@ def call_scoped():
 
 
 @pytest.fixture  # noqa: PT001
-def pytest_attribute():
+def pytest_attribute() -> None:
 	"""
 	:return:
 	"""
 
 
 @pytest.fixture()
-def pytest_call():
+def pytest_call() -> None:
 	"""
 
 	:return:
@@ -45,7 +49,7 @@ def pytest_call():
 
 
 @pytest.fixture(scope="module")
-def pytest_call_scoped():
+def pytest_call_scoped() -> None:
 	"""
 	:return:
 	"""
@@ -62,26 +66,26 @@ def pytest_call_scoped():
 				pytest.param(pytest_call_scoped, "module", id="pytest_call_scoped"),
 				]
 		)
-def test_is_fixture(func, scope):
+def test_is_fixture(func: Union[FunctionType, MethodType], scope: str) -> None:
 	assert is_fixture(func) == (True, scope)
 
 
-def function():
+def function() -> None:
 	pass
 
 
 class Class:
 
-	def method(self):
+	def method(self) -> None:
 		pass
 
 
-def deco(func):
+def deco(func: Any) -> Any:
 	return func
 
 
 @deco
-def decorated():
+def decorated() -> None:
 	pass
 
 
@@ -94,5 +98,5 @@ def decorated():
 				pytest.param(Class().method, id="Class().method"),
 				]
 		)
-def test_isnt_fixture(func):
+def test_isnt_fixture(func: Union[FunctionType, MethodType]) -> None:
 	assert is_fixture(func) == (False, None)
