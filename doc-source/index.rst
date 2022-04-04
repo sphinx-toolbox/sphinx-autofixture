@@ -60,7 +60,8 @@ sphinx-autofixture
 		:workflow: mypy
 		:alt: mypy status
 
-	.. |requires| requires-io-shield::
+	.. |requires| image:: https://dependency-dash.herokuapp.com/github/sphinx-toolbox/sphinx-autofixture/badge.svg
+		:target: https://dependency-dash.herokuapp.com/github/sphinx-toolbox/sphinx-autofixture/
 		:alt: Requirements Status
 
 	.. |coveralls| coveralls-shield::
@@ -113,7 +114,7 @@ sphinx-autofixture
 		:last-commit:
 		:alt: GitHub last commit
 
-	.. |maintained| maintained-shield:: 2021
+	.. |maintained| maintained-shield:: 2022
 		:alt: Maintenance
 
 	.. |pypi-downloads| pypi-shield::
