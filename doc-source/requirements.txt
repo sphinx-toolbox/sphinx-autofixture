@@ -1,8 +1,8 @@
-git+https://github.com/sphinx-toolbox/html-section.git
 default-values>=0.5.0
 domdf-python-tools[testing]>=1.5.0
 extras-require>=0.2.0
 furo>=2020.11.19b18
+html-section>=0.1.0
 seed-intersphinx-mapping>=0.3.1
 sphinx-copybutton>=0.2.12
 sphinx-debuginfo>=0.1.0

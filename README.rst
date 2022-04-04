@@ -63,8 +63,8 @@ and `the documentation for coincidence`_ for an example with the ReadTheDocs the
 	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://requires.io/github/sphinx-toolbox/sphinx-autofixture/requirements.svg?branch=master
-	:target: https://requires.io/github/sphinx-toolbox/sphinx-autofixture/requirements/?branch=master
+.. |requires| image:: https://dependency-dash.herokuapp.com/github/sphinx-toolbox/sphinx-autofixture/badge.svg
+	:target: https://dependency-dash.herokuapp.com/github/sphinx-toolbox/sphinx-autofixture/
 	:alt: Requirements Status
 
 .. |coveralls| image:: https://img.shields.io/coveralls/github/sphinx-toolbox/sphinx-autofixture/master?logo=coveralls
@@ -114,7 +114,7 @@ and `the documentation for coincidence`_ for an example with the ReadTheDocs the
 	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/commit/master
 	:alt: GitHub last commit
 
-.. |maintained| image:: https://img.shields.io/maintenance/yes/2021
+.. |maintained| image:: https://img.shields.io/maintenance/yes/2022
 	:alt: Maintenance
 
 .. |pypi-downloads| image:: https://img.shields.io/pypi/dm/sphinx-autofixture
