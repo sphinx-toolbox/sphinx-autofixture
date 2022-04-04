@@ -44,6 +44,7 @@ known_third_party = [
     "pytest_timeout",
     "requests",
     "sphinx",
+    "sphinx_jinja2_compat",
     "sphinx_toolbox",
 ]
 known_first_party = "sphinx_autofixture"
