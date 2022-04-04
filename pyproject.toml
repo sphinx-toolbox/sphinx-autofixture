@@ -4,7 +4,7 @@ build-backend = "whey"
 
 [project]
 name = "sphinx-autofixture"
-version = "0.2.3"
+version = "0.3.0"
 description = "Sphinx autodocumenter for pytest fixtures."
 readme = "README.rst"
 keywords = [ "documentation", "pytest", "sphinx", "sphinx-extension",]
@@ -136,6 +136,9 @@ show_error_codes = true
 
 [tool.snippet-fmt]
 directives = [ "code-block",]
+
+[tool.dep_checker]
+allowed_unused = [ "sphinx_jinja2_compat",]
 
 [tool.dependency-dash."requirements.txt"]
 order = 10

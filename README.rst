@@ -106,7 +106,7 @@ and `the documentation for coincidence`_ for an example with the ReadTheDocs the
 .. |language| image:: https://img.shields.io/github/languages/top/sphinx-toolbox/sphinx-autofixture
 	:alt: GitHub top language
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/sphinx-toolbox/sphinx-autofixture/v0.2.3
+.. |commits-since| image:: https://img.shields.io/github/commits-since/sphinx-toolbox/sphinx-autofixture/v0.3.0
 	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/pulse
 	:alt: GitHub commits since tagged version
 
