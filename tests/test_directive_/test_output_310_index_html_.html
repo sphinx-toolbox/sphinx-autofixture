@@ -30,8 +30,11 @@
        </h1>
        <dl class="py fixture">
         <dt id="coincidence.fixtures.tmp_pathplus">
-         <em class="property">
-          fixture
+         <em class="property">{% if sphinx_version >= (3, 5) %}
+          <span class="pre">
+           fixture
+          </span>{% else %}
+          fixture{% endif %}
          </em>
          <code class="sig-prename descclassname">
           coincidence.fixtures.
@@ -88,8 +91,11 @@ created as a sub directory of the base temporary directory.
        </p>
        <dl class="py fixture">
         <dt>
-         <em class="property">
-          fixture
+         <em class="property">{% if sphinx_version >= (3, 5) %}
+          <span class="pre">
+           fixture
+          </span>{% else %}
+          fixture{% endif %}
          </em>
          <code class="sig-prename descclassname">
           coincidence.fixtures.
@@ -136,8 +142,11 @@ created as a sub directory of the base temporary directory.
        </span>
        <dl class="py class">
         <dt id="tests.myproject.A">
-         <em class="property">
-          class
+         <em class="property">{% if sphinx_version >= (3, 5) %}
+          <span class="pre">
+           class
+          </span>{% else %}
+          class{% endif %}
          </em>
          <code class="sig-prename descclassname">
           tests.myproject.
@@ -158,8 +167,14 @@ created as a sub directory of the base temporary directory.
            <code class="sig-name descname">
             __dataclass_fields__
            </code>
-           <em class="property">
-            = {}
+           <em class="property">{% if sphinx_version >= (3, 5) %}
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             {}
+            </span>{% else %}
+            = {}{% endif %}
            </em>
            <a class="headerlink" href="#tests.myproject.A.__dataclass_fields__" title="Permalink to this definition">
             ¶
@@ -173,25 +188,16 @@ created as a sub directory of the base temporary directory.
            <code class="sig-name descname">
             __dataclass_params__
            </code>
-           <em class="property">
-            = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)
+           <em class="property">{% if sphinx_version >= (3, 5) %}
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)
+            </span>{% else %}
+            = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False){% endif %}
            </em>
            <a class="headerlink" href="#tests.myproject.A.__dataclass_params__" title="Permalink to this definition">
-            ¶
-           </a>
-          </dt>
-          <dd>
-          </dd>
-         </dl>
-         <dl class="py attribute">
-          <dt id="tests.myproject.A.__dict__">
-           <code class="sig-name descname">
-            __dict__
-           </code>
-           <em class="property">
-            = mappingproxy({'__module__': 'tests.myproject', '__doc__': '\n\t\tMy Dataclass\n\t\t', '__dict__': &lt;attribute '__dict__' of 'A' objects&gt;, '__weakref__': &lt;attribute '__weakref__' of 'A' objects&gt;, '__dataclass_params__': _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False), '__dataclass_fields__': {}, '__init__': &lt;function A.__init__&gt;, '__repr__': &lt;function A.__repr__&gt;, '__eq__': &lt;function A.__eq__&gt;, '__hash__': None, '__match_args__': (), '__annotations__': {}})
-           </em>
-           <a class="headerlink" href="#tests.myproject.A.__dict__" title="Permalink to this definition">
             ¶
            </a>
           </dt>
@@ -207,8 +213,11 @@ created as a sub directory of the base temporary directory.
             (
            </span>
            <em class="sig-param">
-            <span class="n">
-             other
+            <span class="n">{% if sphinx_version >= (3, 5) %}
+             <span class="pre">
+              other
+             </span>{% else %}
+             other{% endif %}
             </span>
            </em>
            <span class="sig-paren">
@@ -229,8 +238,14 @@ created as a sub directory of the base temporary directory.
            <code class="sig-name descname">
             __hash__
            </code>
-           <em class="property">
-            = None
+           <em class="property">{% if sphinx_version >= (3, 5) %}
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             None
+            </span>{% else %}
+            = None{% endif %}
            </em>
            <a class="headerlink" href="#tests.myproject.A.__hash__" title="Permalink to this definition">
             ¶
@@ -249,8 +264,12 @@ created as a sub directory of the base temporary directory.
            </span>
            <span class="sig-paren">
             )
-           </span>
-           → None
+           </span>{% if sphinx_version >= (3, 5) %}
+           →
+           <span class="pre">
+            None
+           </span>{% else %}
+           → None{% endif %}
            <a class="headerlink" href="#tests.myproject.A.__init__" title="Permalink to this definition">
             ¶
            </a>
@@ -266,8 +285,14 @@ created as a sub directory of the base temporary directory.
            <code class="sig-name descname">
             __match_args__
            </code>
-           <em class="property">
-            = ()
+           <em class="property">{% if sphinx_version >= (3, 5) %}
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             ()
+            </span>{% else %}
+            = (){% endif %}
            </em>
            <a class="headerlink" href="#tests.myproject.A.__match_args__" title="Permalink to this definition">
             ¶
@@ -281,8 +306,14 @@ created as a sub directory of the base temporary directory.
            <code class="sig-name descname">
             __module__
            </code>
-           <em class="property">
-            = 'tests.myproject'
+           <em class="property">{% if sphinx_version >= (3, 5) %}
+            <span class="pre">
+             =
+            </span>
+            <span class="pre">
+             'tests.myproject'
+            </span>{% else %}
+            = 'tests.myproject'{% endif %}
            </em>
            <a class="headerlink" href="#tests.myproject.A.__module__" title="Permalink to this definition">
             ¶

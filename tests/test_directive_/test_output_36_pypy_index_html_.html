@@ -30,8 +30,11 @@
        </h1>
        <dl class="py fixture">
         <dt id="coincidence.fixtures.tmp_pathplus">
-         <em class="property">
-          fixture
+         <em class="property">{% if sphinx_version >= (3, 5) %}
+          <span class="pre">
+           fixture
+          </span>{% else %}
+          fixture{% endif %}
          </em>
          <code class="sig-prename descclassname">
           coincidence.fixtures.
@@ -88,8 +91,11 @@ created as a sub directory of the base temporary directory.
        </p>
        <dl class="py fixture">
         <dt>
-         <em class="property">
-          fixture
+         <em class="property">{% if sphinx_version >= (3, 5) %}
+          <span class="pre">
+           fixture
+          </span>{% else %}
+          fixture{% endif %}
          </em>
          <code class="sig-prename descclassname">
           coincidence.fixtures.

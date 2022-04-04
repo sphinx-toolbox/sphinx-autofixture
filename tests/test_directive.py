@@ -8,9 +8,9 @@ import pytest
 from bs4 import BeautifulSoup, element  # type: ignore[import]
 from coincidence import max_version, min_version, not_pypy, only_pypy, only_version
 from domdf_python_tools.paths import PathPlus
-from pytest_regressions.file_regression import FileRegressionFixture
+from sphinx.application import Sphinx
 from sphinx.testing.path import path
-from sphinx_toolbox.testing import check_html_regression
+from sphinx_toolbox.testing import HTMLRegressionFixture
 
 pytest_plugins = "sphinx.testing.fixtures"
 
@@ -84,10 +84,15 @@ def original_datadir(request: Any) -> Path:
 				pytest.param("310", marks=only_version("3.10", reason="Output differs on 3.10")),
 				]
 		)
-def test_output(page: BeautifulSoup, file_regression: FileRegressionFixture, version):
+def test_output(
+		page: BeautifulSoup,
+		html_regression: HTMLRegressionFixture,
+		version: str,
+		) -> None:
 
 	code: element.Tag
 	for code in page.find_all("code", attrs={"class": "sig-prename descclassname"}):
+
 		first_child = code.contents[0]
 		if isinstance(first_child, element.Tag):
 			code.contents = [first_child.contents[0]]
@@ -97,4 +102,4 @@ def test_output(page: BeautifulSoup, file_regression: FileRegressionFixture, ver
 		if isinstance(first_child, element.Tag):
 			code.contents = [first_child.contents[0]]
 
-	check_html_regression(page, file_regression)
+	html_regression.check(page, jinja2=True)
