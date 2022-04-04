@@ -56,7 +56,7 @@ class FixtureDecoratorFinder(ast.NodeVisitor):
 	:class:`ast.NodeVisitor` for finding pytest fixtures.
 	"""
 
-	def __init__(self):
+	def __init__(self) -> None:
 
 		#: Is the function a fixture?
 		self.is_fixture = False
@@ -187,7 +187,7 @@ class FixtureDocumenter(FunctionDocumenter):
 				)
 
 
-def validate_config(app: Sphinx, config: Config):
+def validate_config(app: Sphinx, config: Config) -> None:
 	r"""
 	Validate the provided configuration values.
 
@@ -202,7 +202,7 @@ def validate_config(app: Sphinx, config: Config):
 		rst_prolog = StringList(rst_prolog)
 		rst_prolog.append(nbsp_sub)
 
-	config.rst_prolog = str(rst_prolog)  # type: ignore
+	config.rst_prolog = str(rst_prolog)  # type: ignore[attr-defined]
 
 
 def setup(app: Sphinx) -> Dict[str, Any]:
