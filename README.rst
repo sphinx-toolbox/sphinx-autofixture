@@ -63,8 +63,8 @@ and `the documentation for coincidence`_ for an example with the ReadTheDocs the
 	:target: https://github.com/sphinx-toolbox/sphinx-autofixture/actions?query=workflow%3A%22mypy%22
 	:alt: mypy status
 
-.. |requires| image:: https://dependency-dash.herokuapp.com/github/sphinx-toolbox/sphinx-autofixture/badge.svg
-	:target: https://dependency-dash.herokuapp.com/github/sphinx-toolbox/sphinx-autofixture/
+.. |requires| image:: https://dependency-dash.repo-helper.uk/github/sphinx-toolbox/sphinx-autofixture/badge.svg
+	:target: https://dependency-dash.repo-helper.uk/github/sphinx-toolbox/sphinx-autofixture/
 	:alt: Requirements Status
 
 .. |coveralls| image:: https://img.shields.io/coveralls/github/sphinx-toolbox/sphinx-autofixture/master?logo=coveralls
