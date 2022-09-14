@@ -1,5 +1,14 @@
+{% macro span_pre(text, indent='') -%}
+{% if sphinx_version >= (3, 5) %}<span class="pre">
+{{ indent }} {{ text }}
+{{ indent }}</span>{% else %}{{ text }}{% endif %}
+{%- endmacro -%}
+{% set heading = ("heading" if sphinx_version >= (5, 0) else 'headline') -%}
+{% set sig_prename_tag=("span" if sphinx_version >= (4, 0) else 'code') -%}
+{% set sig_object_class=(' class="sig sig-object py"' if sphinx_version >= (4, 0) else '') -%}
+{% set section = ("section", "section") if docutils_version >= (0, 17) else ('div class="section"', "div") -%}
 <!DOCTYPE html>
-<html>
+<html{% if sphinx_version >= (5, 0) %} lang="en"{% endif %}>
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -13,7 +22,9 @@
   <script src="_static/jquery.js">
   </script>
   <script src="_static/underscore.js">
-  </script>
+  </script>{% if sphinx_version >= (5, 0) %}
+  <script src="_static/_sphinx_javascript_frameworks_compat.js">
+  </script>{% endif %}
   <script src="_static/doctools.js">
   </script>
   <meta content="width=device-width, initial-scale=0.9, maximum-scale=0.9" name="viewport"/>
@@ -26,24 +37,21 @@
       <{% if docutils_version >= (0, 17) %}section{% else %}div class="section"{% endif %} id="sphinx-autofixture-demo">
        <h1>
         sphinx-autofixture Demo
-        <a class="headerlink" href="#sphinx-autofixture-demo" title="Permalink to this headline">
+        <a class="headerlink" href="#sphinx-autofixture-demo" title="Permalink to this {{ heading }}">
          ¶
         </a>
        </h1>
        <dl class="py fixture">
-        <dt id="coincidence.fixtures.tmp_pathplus">
-         <em class="property">{% if sphinx_version >= (3, 5) %}
-          <span class="pre">
-           fixture
-          </span>{% else %}
-          fixture{% endif %}
+        <dt{{ sig_object_class }} id="coincidence.fixtures.tmp_pathplus">
+         <em class="property">
+          {{ span_pre("fixture", "          ") }}
          </em>
-         <code class="sig-prename descclassname">
+         <{{ sig_prename_tag }} class="sig-prename descclassname">
           coincidence.fixtures.
-         </code>
-         <code class="sig-name descname">
+         </{{ sig_prename_tag }}>
+         <{{ sig_prename_tag }} class="sig-name descname">
           tmp_pathplus
-         </code>
+         </{{ sig_prename_tag }}>
          <a class="headerlink" href="#coincidence.fixtures.tmp_pathplus" title="Permalink to this definition">
           ¶
          </a>
@@ -92,19 +100,16 @@ created as a sub directory of the base temporary directory.
         </a>
        </p>
        <dl class="py fixture">
-        <dt>
-         <em class="property">{% if sphinx_version >= (3, 5) %}
-          <span class="pre">
-           fixture
-          </span>{% else %}
-          fixture{% endif %}
+        <dt{{ sig_object_class }}>
+         <em class="property">
+          {{ span_pre("fixture", "          ") }}
          </em>
-         <code class="sig-prename descclassname">
+         <{{ sig_prename_tag }} class="sig-prename descclassname">
           coincidence.fixtures.
-         </code>
-         <code class="sig-name descname">
+         </{{ sig_prename_tag }}>
+         <{{ sig_prename_tag }} class="sig-name descname">
           tmp_pathplus
-         </code>
+         </{{ sig_prename_tag }}>
         </dt>
         <dd>
          <p>
@@ -143,13 +148,13 @@ created as a sub directory of the base temporary directory.
        <span class="target" id="module-tests.myproject">
        </span>
        <dl class="py function">
-        <dt id="tests.myproject.baz">
-         <code class="sig-prename descclassname">
+        <dt{{ sig_object_class }} id="tests.myproject.baz">
+         <{{ sig_prename_tag }} class="sig-prename descclassname">
           tests.myproject.
-         </code>
-         <code class="sig-name descname">
+         </{{ sig_prename_tag }}>
+         <{{ sig_prename_tag }} class="sig-name descname">
           baz
-         </code>
+         </{{ sig_prename_tag }}>
          <span class="sig-paren">
           (
          </span>
@@ -167,13 +172,13 @@ created as a sub directory of the base temporary directory.
         </dd>
        </dl>
        <dl class="py function">
-        <dt id="tests.myproject.fizbuzz">
-         <code class="sig-prename descclassname">
+        <dt{{ sig_object_class }} id="tests.myproject.fizbuzz">
+         <{{ sig_prename_tag }} class="sig-prename descclassname">
           tests.myproject.
-         </code>
-         <code class="sig-name descname">
+         </{{ sig_prename_tag }}>
+         <{{ sig_prename_tag }} class="sig-name descname">
           fizbuzz
-         </code>
+         </{{ sig_prename_tag }}>
          <span class="sig-paren">
           (
          </span>

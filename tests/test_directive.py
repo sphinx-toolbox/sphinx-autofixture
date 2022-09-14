@@ -54,13 +54,6 @@ def original_datadir(request: Any) -> Path:
 								]
 						),
 				pytest.param(
-						"37",
-						marks=[
-								only_version("3.7", reason="Output differs on 3.7"),
-								not_pypy("Output differs on PyPy")
-								]
-						),
-				pytest.param(
 						"36-pypy",
 						marks=[
 								only_version("3.6", reason="Output differs on 3.6"),
@@ -70,18 +63,19 @@ def original_datadir(request: Any) -> Path:
 				pytest.param(
 						"37-pypy",
 						marks=[
-								only_version("3.7", reason="Output differs on 3.7"),
+								min_version("3.7", reason="Output differs on 3.7"),
 								only_pypy("Output differs on PyPy")
 								]
 						),
 				pytest.param(
-						"38",
+						"37",
 						marks=[
-								min_version("3.8", reason="Output differs on 3.6-3.7"),
-								max_version("3.9.99", reason="Output differs on 3.10")
+								min_version("3.7", reason="Output differs on 3.6"),
+								max_version("3.9.99", reason="Output differs on 3.10"),
+								not_pypy("Output differs on PyPy"),
 								]
 						),
-				pytest.param("310", marks=only_version("3.10", reason="Output differs on 3.10")),
+				pytest.param("310", marks=min_version("3.10", reason="Output differs on 3.10")),
 				]
 		)
 def test_output(

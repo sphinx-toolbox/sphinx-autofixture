@@ -16,14 +16,32 @@ sphinx_html_theme: furo
 preserve_custom_theme: true
 min_coverage: 95
 
+# Versions to run tests for
 python_versions:
- - 3.6
- - 3.7
- - 3.8
- - 3.9
- - 3.10-dev
- - pypy36
- - pypy37
+ '3.6':
+  matrix_exclude:
+   sphinx:
+    - 5.0
+    - 5.1
+ '3.7':
+ '3.8':
+ '3.9':
+ '3.10':
+ 3.11-dev:
+ pypy36:
+  matrix_exclude:
+   sphinx:
+    - 4.0
+    - 4.1
+    - 4.2
+    - 4.3
+    - 4.4
+    - 4.5
+    - 5.0
+    - 5.1
+ pypy37:
+ pypy38:
+ pypy39:
 
 conda_channels:
  - conda-forge
@@ -38,6 +56,14 @@ third_party_version_matrix:
     - 3.3
     - 3.4
     - 3.5
+    - 4.0
+    - 4.1
+    - 4.2
+    - 4.3
+    - 4.4
+    - 4.5
+    - 5.0
+    - 5.1
 
 keywords:
   - sphinx
@@ -56,3 +82,6 @@ classifiers:
 
 exclude_files:
  - contributing
+
+tox_unmanaged:
+ - testenv
