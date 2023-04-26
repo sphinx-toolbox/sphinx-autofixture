@@ -193,15 +193,15 @@ created as a sub directory of the base temporary directory.
           <dt{{ sig_object_class }} id="tests.myproject.A.__dataclass_params__">
            <{{ sig_prename_tag }} class="sig-name descname">
             {{ span_pre("__dataclass_params__", "            ") }}
-           </{{ sig_prename_tag }}>
+           </{{ sig_prename_tag }}>{% set DataclassParams_end_args = ',match_args=True,kw_only=False,slots=False,weakref_slot=False' if python_version >= (3, 12) else '' %}
            <em class="property">{% if (3, 5) <= sphinx_version < (4, 3) %}
             <span class="pre">
              =
             </span>
             <span class="pre">
-             _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False)
+             _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False{{ DataclassParams_end_args }})
             </span>{% else %}
-            = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False){% endif %}
+            = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False{{ DataclassParams_end_args }}){% endif %}
            </em>
            <a class="headerlink" href="#tests.myproject.A.__dataclass_params__" title="Permalink to this definition">
             ¶
