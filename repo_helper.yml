@@ -23,17 +23,30 @@ python_versions:
    sphinx:
     - 5.0
     - 5.1
+    - 5.2
+    - 5.3
     - 6.0
     - 6.1
+    - 6.2
+    - 7.0
+    - 7.1
+    - 7.2
  '3.7':
   matrix_exclude:
    sphinx:
     - 6.0
     - 6.1
+    - 6.2
+    - 7.0
+    - 7.1
+    - 7.2
  '3.8':
+  matrix_exclude:
+   sphinx:
+    - 7.2
  '3.9':
  '3.10':
- 3.11:
+ "3.11":
  3.12-dev:
  pypy36:
   matrix_exclude:
@@ -46,14 +59,26 @@ python_versions:
     - 4.5
     - 5.0
     - 5.1
+    - 5.2
     - 6.0
     - 6.1
+    - 6.2
+    - 7.0
+    - 7.1
+    - 7.2
  pypy37:
   matrix_exclude:
    sphinx:
     - 6.0
     - 6.1
+    - 6.2
+    - 7.0
+    - 7.1
+    - 7.2
  pypy38:
+  matrix_exclude:
+   sphinx:
+    - 7.2
  pypy39:
 
 conda_channels:
@@ -77,8 +102,14 @@ third_party_version_matrix:
     - 4.5
     - 5.0
     - 5.1
+    - 5.2
+    - 5.3
     - 6.0
     - 6.1
+    - 6.2
+    - 7.0
+    - 7.1
+    # - 7.2
 
 keywords:
   - sphinx
