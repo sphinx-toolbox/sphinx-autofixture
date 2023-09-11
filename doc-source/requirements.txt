@@ -1,7 +1,7 @@
 default-values>=0.6.0
 domdf-python-tools[testing]>=1.5.0
 extras-require>=0.5.0
-furo==2021.06.18b36
+furo==2023.9.10
 html-section>=0.3.0
 seed-intersphinx-mapping>=1.2.2
 sphinx-copybutton>=0.2.12
