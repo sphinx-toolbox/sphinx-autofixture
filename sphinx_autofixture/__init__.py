@@ -64,10 +64,9 @@ class FixtureDecoratorFinder(ast.NodeVisitor):
 		#: If it is, the scope of the fixture.
 		self.scope = "function"
 
-	def visit_FunctionDef(self, node: ast.FunctionDef) -> None:  # noqa: D102
+	def _visit(self, node: Union[ast.FunctionDef, ast.AsyncFunctionDef]) -> None:  # noqa: D102
 		if node.decorator_list:
 			for deco in node.decorator_list:
-
 				if isinstance(deco, ast.Call):
 					keywords: Dict[Optional[str], ast.expr] = {k.arg: k.value for k in deco.keywords}
 
@@ -94,6 +93,12 @@ class FixtureDecoratorFinder(ast.NodeVisitor):
 						return
 				else:  # pragma: no cover
 					raise NotImplementedError(str(type(deco)))
+
+	def visit_FunctionDef(self, node: ast.FunctionDef) -> None:  # noqa: D102
+		self._visit(node)
+
+	def visit_AsyncFunctionDef(self, node: ast.AsyncFunctionDef) -> None:  # noqa: D102
+		self._visit(node)
 
 
 def is_fixture(function: Union[FunctionType, MethodType]) -> Tuple[bool, Optional[str]]:
