@@ -369,7 +369,7 @@ created as a sub directory of the base temporary directory.
           </dt>
           <dd>
            <p>
-            list of weak references to the object (if defined)
+            list of weak references to the object{% if python_version < (3, 11) %} (if defined){% endif %}
            </p>
           </dd>
          </dl>
