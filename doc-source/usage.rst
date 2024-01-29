@@ -42,6 +42,30 @@ Usage
 
 		.. autofixture:: coincidence.tmp_pathplus
 
+	**Async Example:**
+
+	.. code-block:: python
+
+		# stdlib
+		import asyncio
+
+		# 3rd party
+		import pytest_asyncio
+
+
+		@pytest_asyncio.fixture(scope="module")
+		async def async_fixture():
+			"""
+			Async fixture demo
+			"""
+
+			return await asyncio.sleep(0.1)
+
+
+	.. rest-example::
+
+		.. autofixture:: async_demo.async_fixture
+
 
 	.. tip:: :rst:dir:`autofixture` can also be used with :rst:dir:`automodule`.
 

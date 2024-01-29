@@ -20,15 +20,17 @@
    sphinx-autofixture Demo — Python  documentation
   </title>
   <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js">
-  </script>
+  </script>{% if sphinx_version < (6, 0) %}
   <script src="_static/jquery.js">
   </script>
   <script src="_static/underscore.js">
   </script>{% if sphinx_version >= (5, 0) %}
   <script src="_static/_sphinx_javascript_frameworks_compat.js">
-  </script>{% endif %}
+  </script>{% endif %}{% endif %}
   <script src="_static/doctools.js">
-  </script>
+  </script>{% if sphinx_version >= (5, 2) %}
+  <script src="_static/sphinx_highlight.js">
+  </script>{% endif %}
   <meta content="width=device-width, initial-scale=0.9, maximum-scale=0.9" name="viewport"/>
  </head>
  <body>
@@ -149,6 +151,38 @@ created as a sub directory of the base temporary directory.
        </dl>
        <span class="target" id="module-tests.myproject">
        </span>
+       <dl class="py fixture">
+        <dt{{ sig_object_class }} id="tests.myproject.async_fixture">
+         <em class="property">
+          {% if sphinx_version >= (3, 5) %}<span class="pre">
+           async
+          </span>
+          <span class="pre">
+           fixture
+          </span>{% else %}async fixture{% endif %}
+         </em>
+         <{{ sig_prename_tag }} class="sig-prename descclassname">
+          {{ span_pre("tests.myproject.", "          ", (3, 5)) }}
+         </{{ sig_prename_tag }}>
+         <{{ sig_prename_tag }} class="sig-name descname">
+          {{ span_pre("async_fixture", "          ", (3, 5)) }}
+         </{{ sig_prename_tag }}>
+         <a class="headerlink" href="#tests.myproject.async_fixture" title="Permalink to this definition">
+          ¶
+         </a>
+        </dt>
+        <dd>
+         <p>
+          <strong>
+           Scope:
+          </strong>
+          module
+         </p>
+         <p>
+          Async fixture demo
+         </p>
+        </dd>
+       </dl>
        <dl class="py function">
         <dt{{ sig_object_class }} id="tests.myproject.baz">
          <{{ sig_prename_tag }} class="sig-prename descclassname">

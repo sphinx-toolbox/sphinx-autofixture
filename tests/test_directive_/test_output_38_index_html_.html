@@ -1,14 +1,5 @@
-{% macro span_pre(text, indent='', min_version=(3, 5)) -%}
-{% if sphinx_version >= min_version %}<span class="pre">
-{{ indent }} {{ text }}
-{{ indent }}</span>{% else %}{{ text }}{% endif %}
-{%- endmacro -%}
-{% set heading = ("heading" if sphinx_version >= (5, 0) else 'headline') -%}
-{% set sig_prename_tag=("span" if sphinx_version >= (4, 0) else 'code') -%}
-{% set sig_object_class=(' class="sig sig-object py"' if sphinx_version >= (4, 0) else '') -%}
-{% set section = ("section", "section") if docutils_version >= (0, 17) else ('div class="section"', "div") -%}
 <!DOCTYPE html>
-<html{% if sphinx_version >= (5, 0) %} lang="en"{% endif %}>
+<html>
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -20,17 +11,13 @@
    sphinx-autofixture Demo — Python  documentation
   </title>
   <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js">
-  </script>{% if sphinx_version < (6, 0) %}
+  </script>
   <script src="_static/jquery.js">
   </script>
   <script src="_static/underscore.js">
-  </script>{% if sphinx_version >= (5, 0) %}
-  <script src="_static/_sphinx_javascript_frameworks_compat.js">
-  </script>{% endif %}{% endif %}
+  </script>
   <script src="_static/doctools.js">
-  </script>{% if sphinx_version >= (5, 2) %}
-  <script src="_static/sphinx_highlight.js">
-  </script>{% endif %}
+  </script>
   <meta content="width=device-width, initial-scale=0.9, maximum-scale=0.9" name="viewport"/>
  </head>
  <body>
@@ -41,21 +28,24 @@
       <{% if docutils_version >= (0, 17) %}section{% else %}div class="section"{% endif %} id="sphinx-autofixture-demo">
        <h1>
         sphinx-autofixture Demo
-        <a class="headerlink" href="#sphinx-autofixture-demo" title="Permalink to this {{ heading }}">
+        <a class="headerlink" href="#sphinx-autofixture-demo" title="Permalink to this headline">
          ¶
         </a>
        </h1>
        <dl class="py fixture">
-        <dt{{ sig_object_class }} id="coincidence.fixtures.tmp_pathplus">
-         <em class="property">
-          {{ span_pre("fixture", "          ", (3, 5)) }}
+        <dt id="coincidence.fixtures.tmp_pathplus">
+         <em class="property">{% if sphinx_version >= (3, 5) %}
+          <span class="pre">
+           fixture
+          </span>{% else %}
+          fixture{% endif %}
          </em>
-         <{{ sig_prename_tag }} class="sig-prename descclassname">
-          {{ span_pre("coincidence.fixtures.", "          ") }}
-         </{{ sig_prename_tag }}>
-         <{{ sig_prename_tag }} class="sig-name descname">
-          {{ span_pre("tmp_pathplus", "          ") }}
-         </{{ sig_prename_tag }}>
+         <code class="sig-prename descclassname">
+          coincidence.fixtures.
+         </code>
+         <code class="sig-name descname">
+          tmp_pathplus
+         </code>
          <a class="headerlink" href="#coincidence.fixtures.tmp_pathplus" title="Permalink to this definition">
           ¶
          </a>
@@ -104,16 +94,19 @@ created as a sub directory of the base temporary directory.
         </a>
        </p>
        <dl class="py fixture">
-        <dt{{ sig_object_class }}>
-         <em class="property">
-          {{ span_pre("fixture", "          ", (3, 5)) }}
+        <dt>
+         <em class="property">{% if sphinx_version >= (3, 5) %}
+          <span class="pre">
+           fixture
+          </span>{% else %}
+          fixture{% endif %}
          </em>
-         <{{ sig_prename_tag }} class="sig-prename descclassname">
-          {{ span_pre("coincidence.fixtures.", "          ") }}
-         </{{ sig_prename_tag }}>
-         <{{ sig_prename_tag }} class="sig-name descname">
-          {{ span_pre("tmp_pathplus", "          ") }}
-         </{{ sig_prename_tag }}>
+         <code class="sig-prename descclassname">
+          coincidence.fixtures.
+         </code>
+         <code class="sig-name descname">
+          tmp_pathplus
+         </code>
         </dt>
         <dd>
          <p>
@@ -152,16 +145,19 @@ created as a sub directory of the base temporary directory.
        <span class="target" id="module-tests.myproject">
        </span>
        <dl class="py class">
-        <dt{{ sig_object_class }} id="tests.myproject.A">
-         <em class="property">
-          {{ span_pre("class", "          ", (3, 5)) }}
+        <dt id="tests.myproject.A">
+         <em class="property">{% if sphinx_version >= (3, 5) %}
+          <span class="pre">
+           class
+          </span>{% else %}
+          class{% endif %}
          </em>
-         <{{ sig_prename_tag }} class="sig-prename descclassname">
-          {{ span_pre("tests.myproject.", "          ") }}
-         </{{ sig_prename_tag }}>
-         <{{ sig_prename_tag }} class="sig-name descname">
-          {{ span_pre("A", "          ") }}
-         </{{ sig_prename_tag }}>
+         <code class="sig-prename descclassname">
+          tests.myproject.
+         </code>
+         <code class="sig-name descname">
+          A
+         </code>
          <a class="headerlink" href="#tests.myproject.A" title="Permalink to this definition">
           ¶
          </a>
@@ -171,11 +167,11 @@ created as a sub directory of the base temporary directory.
           My Dataclass
          </p>
          <dl class="py attribute">
-          <dt{{ sig_object_class }} id="tests.myproject.A.__dataclass_fields__">
-           <{{ sig_prename_tag }} class="sig-name descname">
-            {{ span_pre("__dataclass_fields__", "            ") }}
-           </{{ sig_prename_tag }}>
-           <em class="property">{% if (3, 5) <= sphinx_version < (4, 3) %}
+          <dt id="tests.myproject.A.__dataclass_fields__">
+           <code class="sig-name descname">
+            __dataclass_fields__
+           </code>
+           <em class="property">{% if sphinx_version >= (3, 5) %}
             <span class="pre">
              =
             </span>
@@ -192,11 +188,11 @@ created as a sub directory of the base temporary directory.
           </dd>
          </dl>
          <dl class="py attribute">
-          <dt{{ sig_object_class }} id="tests.myproject.A.__dataclass_params__">
-           <{{ sig_prename_tag }} class="sig-name descname">
-            {{ span_pre("__dataclass_params__", "            ") }}
-           </{{ sig_prename_tag }}>
-           <em class="property">{% if (3, 5) <= sphinx_version < (4, 3) %}
+          <dt id="tests.myproject.A.__dataclass_params__">
+           <code class="sig-name descname">
+            __dataclass_params__
+           </code>
+           <em class="property">{% if sphinx_version >= (3, 5) %}
             <span class="pre">
              =
             </span>
@@ -213,16 +209,19 @@ created as a sub directory of the base temporary directory.
           </dd>
          </dl>
          <dl class="py method">
-          <dt{{ sig_object_class }} id="tests.myproject.A.__eq__">
-           <{{ sig_prename_tag }} class="sig-name descname">
-            {{ span_pre("__eq__", "            ") }}
-           </{{ sig_prename_tag }}>
+          <dt id="tests.myproject.A.__eq__">
+           <code class="sig-name descname">
+            __eq__
+           </code>
            <span class="sig-paren">
             (
            </span>
            <em class="sig-param">
-            <span class="n">
-             {{ span_pre("other", "             ", (3, 5)) }}
+            <span class="n">{% if sphinx_version >= (3, 5) %}
+             <span class="pre">
+              other
+             </span>{% else %}
+             other{% endif %}
             </span>
            </em>
            <span class="sig-paren">
@@ -239,11 +238,11 @@ created as a sub directory of the base temporary directory.
           </dd>
          </dl>
          <dl class="py attribute">
-          <dt{{ sig_object_class }} id="tests.myproject.A.__hash__">
-           <{{ sig_prename_tag }} class="sig-name descname">
-            {{ span_pre("__hash__", "            ") }}
-           </{{ sig_prename_tag }}>
-           <em class="property">{% if (3, 5) <= sphinx_version < (4, 3) %}
+          <dt id="tests.myproject.A.__hash__">
+           <code class="sig-name descname">
+            __hash__
+           </code>
+           <em class="property">{% if sphinx_version >= (3, 5) %}
             <span class="pre">
              =
             </span>
@@ -260,26 +259,16 @@ created as a sub directory of the base temporary directory.
           </dd>
          </dl>
          <dl class="py method">
-          <dt{{ sig_object_class }} id="tests.myproject.A.__init__">
-           <{{ sig_prename_tag }} class="sig-name descname">
-            {{ span_pre("__init__", "            ") }}
-           </{{ sig_prename_tag }}>
+          <dt id="tests.myproject.A.__init__">
+           <code class="sig-name descname">
+            __init__
+           </code>
            <span class="sig-paren">
             (
            </span>
            <span class="sig-paren">
             )
-           </span>{% if sphinx_version >= (4, 1) %}
-           <span class="sig-return">
-            <span class="sig-return-icon">
-             →
-            </span>
-            <span class="sig-return-typehint">
-             <span class="pre">
-              None
-             </span>
-            </span>
-           </span>{% elif sphinx_version >= (3, 5) %}
+           </span>{% if sphinx_version >= (3, 5) %}
            →
            <span class="pre">
             None
@@ -289,18 +278,18 @@ created as a sub directory of the base temporary directory.
             ¶
            </a>
           </dt>
-          <dd>{% if sphinx_version < (4, 1) %}
+          <dd>
            <p>
             Initialize self.  See help(type(self)) for accurate signature.
-           </p>{% endif %}
+           </p>
           </dd>
          </dl>
          <dl class="py attribute">
-          <dt{{ sig_object_class }} id="tests.myproject.A.__module__">
-           <{{ sig_prename_tag }} class="sig-name descname">
-            {{ span_pre("__module__", "            ") }}
-           </{{ sig_prename_tag }}>
-           <em class="property">{% if (3, 5) <= sphinx_version < (4, 3) %}
+          <dt id="tests.myproject.A.__module__">
+           <code class="sig-name descname">
+            __module__
+           </code>
+           <em class="property">{% if sphinx_version >= (3, 5) %}
             <span class="pre">
              =
             </span>
@@ -317,10 +306,10 @@ created as a sub directory of the base temporary directory.
           </dd>
          </dl>
          <dl class="py method">
-          <dt{{ sig_object_class }} id="tests.myproject.A.__repr__">
-           <{{ sig_prename_tag }} class="sig-name descname">
-            {{ span_pre("__repr__", "            ") }}
-           </{{ sig_prename_tag }}>
+          <dt id="tests.myproject.A.__repr__">
+           <code class="sig-name descname">
+            __repr__
+           </code>
            <span class="sig-paren">
             (
            </span>
@@ -338,10 +327,10 @@ created as a sub directory of the base temporary directory.
           </dd>
          </dl>
          <dl class="py attribute">
-          <dt{{ sig_object_class }} id="tests.myproject.A.__weakref__">
-           <{{ sig_prename_tag }} class="sig-name descname">
-            {{ span_pre("__weakref__", "            ") }}
-           </{{ sig_prename_tag }}>
+          <dt id="tests.myproject.A.__weakref__">
+           <code class="sig-name descname">
+            __weakref__
+           </code>
            <a class="headerlink" href="#tests.myproject.A.__weakref__" title="Permalink to this definition">
             ¶
            </a>
@@ -354,46 +343,14 @@ created as a sub directory of the base temporary directory.
          </dl>
         </dd>
        </dl>
-       <dl class="py fixture">
-        <dt{{ sig_object_class }} id="tests.myproject.async_fixture">
-         <em class="property">
-          {% if sphinx_version >= (3, 5) %}<span class="pre">
-           async
-          </span>
-          <span class="pre">
-           fixture
-          </span>{% else %}async fixture{% endif %}
-         </em>
-         <{{ sig_prename_tag }} class="sig-prename descclassname">
-          {{ span_pre("tests.myproject.", "          ", (3, 5)) }}
-         </{{ sig_prename_tag }}>
-         <{{ sig_prename_tag }} class="sig-name descname">
-          {{ span_pre("async_fixture", "          ", (3, 5)) }}
-         </{{ sig_prename_tag }}>
-         <a class="headerlink" href="#tests.myproject.async_fixture" title="Permalink to this definition">
-          ¶
-         </a>
-        </dt>
-        <dd>
-         <p>
-          <strong>
-           Scope:
-          </strong>
-          module
-         </p>
-         <p>
-          Async fixture demo
-         </p>
-        </dd>
-       </dl>
        <dl class="py function">
-        <dt{{ sig_object_class }} id="tests.myproject.baz">
-         <{{ sig_prename_tag }} class="sig-prename descclassname">
-          {{ span_pre("tests.myproject.", "          ") }}
-         </{{ sig_prename_tag }}>
-         <{{ sig_prename_tag }} class="sig-name descname">
-          {{ span_pre("baz", "          ") }}
-         </{{ sig_prename_tag }}>
+        <dt id="tests.myproject.baz">
+         <code class="sig-prename descclassname">
+          tests.myproject.
+         </code>
+         <code class="sig-name descname">
+          baz
+         </code>
          <span class="sig-paren">
           (
          </span>
@@ -411,13 +368,13 @@ created as a sub directory of the base temporary directory.
         </dd>
        </dl>
        <dl class="py function">
-        <dt{{ sig_object_class }} id="tests.myproject.fizbuzz">
-         <{{ sig_prename_tag }} class="sig-prename descclassname">
-          {{ span_pre("tests.myproject.", "          ") }}
-         </{{ sig_prename_tag }}>
-         <{{ sig_prename_tag }} class="sig-name descname">
-          {{ span_pre("fizbuzz", "          ") }}
-         </{{ sig_prename_tag }}>
+        <dt id="tests.myproject.fizbuzz">
+         <code class="sig-prename descclassname">
+          tests.myproject.
+         </code>
+         <code class="sig-name descname">
+          fizbuzz
+         </code>
          <span class="sig-paren">
           (
          </span>

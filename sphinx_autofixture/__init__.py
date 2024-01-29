@@ -30,10 +30,14 @@ Sphinx autodocumenter for pytest fixtures.
 import ast
 import inspect
 from types import FunctionType, MethodType
-from typing import Any, Dict, Optional, Tuple, Union
+from typing import Any, Callable, Dict, List, Optional, Tuple, Union
 
 # 3rd party
+import sphinx
+from docutils import nodes  # nodep
+from docutils.parsers.rst import directives  # nodep
 from domdf_python_tools.stringlist import StringList
+from sphinx import addnodes
 from sphinx.application import Sphinx
 from sphinx.config import Config
 from sphinx.domains import ObjType
@@ -51,6 +55,38 @@ __email__: str = "dominic@davis-foster.co.uk"
 __all__ = ["FixtureDecoratorFinder", "FixtureDocumenter", "is_fixture", "setup"]
 
 
+class _PyFixture(PyClasslike):
+	option_spec: Dict[str, Callable[[str], Any]] = {
+			**PyClasslike.option_spec,
+			"async": directives.flag,
+			}
+
+	if sphinx.version_info >= (4, 3):
+
+		def get_signature_prefix(self, sig: str) -> List[nodes.Node]:
+			if "async" in self.options:
+				return [
+						addnodes.desc_sig_keyword('', "async"),
+						addnodes.desc_sig_space(),
+						addnodes.desc_sig_keyword('', "fixture"),
+						addnodes.desc_sig_space(),
+						]
+
+			else:
+				return [
+						addnodes.desc_sig_keyword('', "fixture"),
+						addnodes.desc_sig_space(),
+						]
+
+	else:
+
+		def get_signature_prefix(self, sig: str) -> str:
+			if "async" in self.options:
+				return "async fixture "
+			else:
+				return "fixture "
+
+
 class FixtureDecoratorFinder(ast.NodeVisitor):
 	"""
 	:class:`ast.NodeVisitor` for finding pytest fixtures.
@@ -60,6 +96,9 @@ class FixtureDecoratorFinder(ast.NodeVisitor):
 
 		#: Is the function a fixture?
 		self.is_fixture = False
+
+		#: Is the function an async fixture?
+		self.is_async_fixture = False
 
 		#: If it is, the scope of the fixture.
 		self.scope = "function"
@@ -86,10 +125,12 @@ class FixtureDecoratorFinder(ast.NodeVisitor):
 				if isinstance(deco, ast.Name):
 					if deco.id == "fixture":
 						self.is_fixture = True
+						self.is_async_fixture = isinstance(node, ast.AsyncFunctionDef)
 						return
 				elif isinstance(deco, ast.Attribute):
 					if deco.attr == "fixture":
 						self.is_fixture = True
+						self.is_async_fixture = isinstance(node, ast.AsyncFunctionDef)
 						return
 				else:  # pragma: no cover
 					raise NotImplementedError(str(type(deco)))
@@ -101,18 +142,22 @@ class FixtureDecoratorFinder(ast.NodeVisitor):
 		self._visit(node)
 
 
-def is_fixture(function: Union[FunctionType, MethodType]) -> Tuple[bool, Optional[str]]:
+def is_fixture(function: Union[FunctionType, MethodType]) -> Tuple[bool, Optional[str], bool]:
 	"""
-	Returns whether the given function is a fixture, and the fixture's scope if it is.
+	Returns whether the given function is a fixture and/or async fixture, and the fixture's scope if it is.
 
 	:param function:
+
+	:rtype: Returns a tuple of ``(<is_fixture>, <scope>, <is_async_fixture>)``
+
+	.. versionchanged:: 0.5.0  Added ``<is_async_fixture>`` to return tuple as 3rd element.
 	"""
 
 	# TODO: should this be relaxed? It seems inspect.getsource can find these after all.
 	#  But can they work as fixtures?
 	if "<locals>" in function.__qualname__:
 		# Can't get source code for these (issue #6)
-		return False, None
+		return False, None, False
 
 	visitor = FixtureDecoratorFinder()
 
@@ -120,18 +165,18 @@ def is_fixture(function: Union[FunctionType, MethodType]) -> Tuple[bool, Optiona
 		source = inspect.getsource(function)
 	except OSError:
 		# May be encountered with dataclasses where there's no source for the dynamic methods (issue #6)
-		return False, None
+		return False, None, False
 
 	try:
 		visitor.visit(ast.parse(source))
 	except IndentationError:
 		# Triggered when trying to parse a method
-		return False, None
+		return False, None, False
 
 	if not visitor.is_fixture:
-		return False, None
+		return False, None, False
 	else:
-		return True, visitor.scope
+		return True, visitor.scope, visitor.is_async_fixture
 
 
 class FixtureDocumenter(FunctionDocumenter):
@@ -185,9 +230,14 @@ class FixtureDocumenter(FunctionDocumenter):
 
 		super().add_directive_header('')
 
+		_, scope, is_async_fixture = is_fixture(self.object)
+
+		if is_async_fixture:
+			self.add_line("   :async:", self.get_sourcename())
+
 		self.add_line('', self.get_sourcename())
 		self.add_line(
-				f"   **Scope:** |nbsp| |nbsp| |nbsp| |nbsp| {is_fixture(self.object)[1]}",
+				f"   **Scope:** |nbsp| |nbsp| |nbsp| |nbsp| {scope}",
 				self.get_sourcename(),
 				)
 
@@ -218,7 +268,7 @@ def setup(app: Sphinx) -> Dict[str, Any]:
 	"""
 
 	app.registry.domains["py"].object_types["fixture"] = ObjType(_("fixture"), "fixture", "function", "obj")
-	app.add_directive_to_domain("py", "fixture", PyClasslike)
+	app.add_directive_to_domain("py", "fixture", _PyFixture)
 	app.add_role_to_domain("py", "fixture", PyXRefRole())
 
 	app.add_autodocumenter(FixtureDocumenter)

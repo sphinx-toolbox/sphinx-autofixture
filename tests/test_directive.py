@@ -33,7 +33,11 @@ def page(content: Any, request: Any) -> Iterator[BeautifulSoup]:
 	pagename = request.param
 	c = (content.outdir / pagename).read_text()
 
-	yield BeautifulSoup(c, "html5lib")
+	soup = BeautifulSoup(c, "html5lib")
+	for div in soup.select("dt.sig.sig-object.py span.k"):
+		div.replaceWithChildren()
+
+	yield soup
 
 
 @pytest.fixture()

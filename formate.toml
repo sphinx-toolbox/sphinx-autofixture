@@ -39,6 +39,7 @@ known_third_party = [
     "github",
     "importlib_metadata",
     "pytest",
+    "pytest_asyncio",
     "pytest_cov",
     "pytest_randomly",
     "pytest_timeout",

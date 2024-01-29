@@ -1,9 +1,13 @@
 # stdlib
+import asyncio
 import builtins
 import sys
 from typing import Any, Callable, Dict
 
-__all__ = ["baz", "fizbuzz"]
+# 3rd party
+import pytest_asyncio
+
+__all__ = ["baz", "fizbuzz", "async_fixture"]
 
 if sys.version_info >= (3, 7):
 	# stdlib
@@ -48,3 +52,12 @@ def create_fizbuzz():
 fizbuzz = create_fizbuzz()
 fizbuzz.__qualname__ = "fizbuzz"
 fizbuzz.__doc__ = "A locally defined function."
+
+
+@pytest_asyncio.fixture(scope="module")
+async def async_fixture():
+	"""
+	Async fixture demo
+	"""
+
+	return await asyncio.sleep(0.1)

@@ -1,9 +1,11 @@
 # stdlib
+import asyncio
 from types import FunctionType, MethodType
 from typing import Any, Union
 
 # 3rd party
 import pytest
+import pytest_asyncio
 from pytest import fixture  # noqa: PT013
 
 # this package
@@ -55,6 +57,15 @@ def pytest_call_scoped() -> None:
 	"""
 
 
+@pytest_asyncio.fixture(scope="module")
+async def async_fixture():
+	"""
+	Async fixture demo
+	"""
+
+	return await asyncio.sleep(0.1)
+
+
 @pytest.mark.parametrize(
 		"func, scope",
 		[
@@ -67,7 +78,11 @@ def pytest_call_scoped() -> None:
 				]
 		)
 def test_is_fixture(func: Union[FunctionType, MethodType], scope: str) -> None:
-	assert is_fixture(func) == (True, scope)
+	assert is_fixture(func) == (True, scope, False)
+
+
+def test_is_async_fixture() -> None:
+	assert is_fixture(async_fixture) == (True, "module", True)
 
 
 def function() -> None:
@@ -99,4 +114,4 @@ def decorated() -> None:
 				]
 		)
 def test_isnt_fixture(func: Union[FunctionType, MethodType]) -> None:
-	assert is_fixture(func) == (False, None)
+	assert is_fixture(func) == (False, None, False)
