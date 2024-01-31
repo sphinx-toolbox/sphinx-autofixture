@@ -5,7 +5,7 @@ import sys
 from typing import Any, Callable, Dict
 
 # 3rd party
-import pytest_asyncio
+import pytest_asyncio  # type: ignore[import]
 
 __all__ = ["baz", "fizbuzz", "async_fixture"]
 

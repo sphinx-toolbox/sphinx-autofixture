@@ -5,7 +5,7 @@ from typing import Any, Union
 
 # 3rd party
 import pytest
-import pytest_asyncio
+import pytest_asyncio  # type: ignore[import]
 from pytest import fixture  # noqa: PT013
 
 # this package

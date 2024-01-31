@@ -34,8 +34,8 @@ from typing import Any, Callable, Dict, List, Optional, Tuple, Union
 
 # 3rd party
 import sphinx
-from docutils import nodes  # nodep
-from docutils.parsers.rst import directives  # nodep
+from docutils import nodes  # type: ignore[import]  # nodep
+from docutils.parsers.rst import directives  # type: ignore[import]  # nodep
 from domdf_python_tools.stringlist import StringList
 from sphinx import addnodes
 from sphinx.application import Sphinx
@@ -80,7 +80,7 @@ class _PyFixture(PyClasslike):
 
 	else:
 
-		def get_signature_prefix(self, sig: str) -> str:
+		def get_signature_prefix(self, sig: str) -> str:  # type: ignore[misc, override]
 			if "async" in self.options:
 				return "async fixture "
 			else:
@@ -103,7 +103,7 @@ class FixtureDecoratorFinder(ast.NodeVisitor):
 		#: If it is, the scope of the fixture.
 		self.scope = "function"
 
-	def _visit(self, node: Union[ast.FunctionDef, ast.AsyncFunctionDef]) -> None:  # noqa: D102
+	def _visit(self, node: Union[ast.FunctionDef, ast.AsyncFunctionDef]) -> None:
 		if node.decorator_list:
 			for deco in node.decorator_list:
 				if isinstance(deco, ast.Call):
