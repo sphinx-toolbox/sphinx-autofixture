@@ -47,5 +47,5 @@ known_third_party = [
     "sphinx_jinja2_compat",
     "sphinx_toolbox",
 ]
-known_first_party = "sphinx_autofixture"
+known_first_party = [ "sphinx_autofixture",]
 line_length = 115
