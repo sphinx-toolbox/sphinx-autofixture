@@ -10,10 +10,10 @@ sphinx-autofixture Demo
 	:members: tmp_pathplus
 	:noindex:
 	:no-docstring:
-	:exclude-members: __dict__
+	:exclude-members: __dict__,__firstlineno__,__replace__,__static_attributes__
 
 .. automodule:: tests.myproject
 	:members:
 	:undoc-members:
 	:special-members:
-	:exclude-members: __dict__
+	:exclude-members: __dict__,__firstlineno__,__replace__,__static_attributes__
