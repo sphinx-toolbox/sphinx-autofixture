@@ -30,8 +30,8 @@
   <script src="_static/doctools.js">
   </script>{% if sphinx_version >= (5, 2) %}
   <script src="_static/sphinx_highlight.js">
-  </script>{% endif %}
-  <meta content="width=device-width, initial-scale=0.9, maximum-scale=0.9" name="viewport"/>
+  </script>{% endif %}{% if alabaster_version < (0, 7, 15) %}
+  <meta content="width=device-width, initial-scale=0.9, maximum-scale=0.9" name="viewport"/>{% endif %}
  </head>
  <body>
   <div class="document">
