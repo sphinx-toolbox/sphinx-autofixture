@@ -28,8 +28,8 @@
   <script src="_static/_sphinx_javascript_frameworks_compat.js">
   </script>{% endif %}
   <script src="_static/doctools.js">
-  </script>
-  <meta content="width=device-width, initial-scale=0.9, maximum-scale=0.9" name="viewport"/>
+  </script>{% if alabaster_version < (0, 7, 15) %}
+  <meta content="width=device-width, initial-scale=0.9, maximum-scale=0.9" name="viewport"/>{% endif %}
  </head>
  <body>
   <div class="document">

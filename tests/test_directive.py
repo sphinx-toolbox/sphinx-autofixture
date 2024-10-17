@@ -1,7 +1,7 @@
 # stdlib
 import os
 from pathlib import Path
-from typing import Any, Iterator
+from typing import Any, Iterator, Tuple, no_type_check
 
 # 3rd party
 import pytest
@@ -101,4 +101,16 @@ def test_output(
 			div["src"] = div["src"].split("?v=")[0]
 			print(div["src"])
 
-	html_regression.check(page, jinja2=True)
+	html_regression.check(page, jinja2=True, jinja2_namespace={"alabaster_version": _get_alabaster_version()})
+
+
+@no_type_check
+def _get_alabaster_version() -> Tuple[int, int, int]:
+	try:
+		# 3rd party
+		import alabaster._version as alabaster  # type: ignore[import]
+	except ImportError:
+		# 3rd party
+		import alabaster  # type: ignore[import]
+
+	return tuple(map(int, alabaster.__version__.split('.')))
