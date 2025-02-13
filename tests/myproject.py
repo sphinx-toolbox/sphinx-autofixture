@@ -18,9 +18,9 @@ if sys.version_info >= (3, 7):
 	__all__.append('A')
 
 
-def foo():
+def foo() -> Callable:
 
-	def bar():
+	def bar():  # noqa: MAN002
 		"""
 		A locally defined function.
 		"""
@@ -32,7 +32,7 @@ baz = foo()
 # fizbuzz = foo()
 
 
-def create_fizbuzz():
+def create_fizbuzz():  # noqa: MAN002
 	# Based on the dataclass module from CPython
 	locals = {"BUILTINS": builtins}  # noqa: A001  # pylint: disable=redefined-builtin
 	local_vars = ", ".join(locals.keys())
