@@ -50,6 +50,14 @@ __email__: str = "dominic@davis-foster.co.uk"
 
 __all__ = ["FixtureDecoratorFinder", "FixtureDocumenter", "is_fixture", "setup"]
 
+try:  # pragma: no cover
+	# 3rd party
+	from _pytest.fixtures import FixtureFunctionDefinition
+except ImportError:  # pragma: no cover
+
+	class FixtureFunctionDefinition:
+		pass
+
 
 class FixtureDecoratorFinder(ast.NodeVisitor):
 	"""
@@ -160,7 +168,7 @@ class FixtureDocumenter(FunctionDocumenter):
 		:param parent: The parent of the member.
 		"""
 
-		if isinstance(member, FunctionType):
+		if isinstance(member, (FunctionType, FixtureFunctionDefinition)):
 			return is_fixture(member)[0]
 		else:  # pragma: no cover
 			return False

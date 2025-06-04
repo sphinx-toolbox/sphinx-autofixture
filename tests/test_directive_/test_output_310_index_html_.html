@@ -3,23 +3,30 @@
 {{ indent }} {{ text }}
 {{ indent }}</span>{% else %}{{ text }}{% endif %}
 {%- endmacro -%}
+{% macro span_target (module, indent='', min_version=(7, 2)) -%}
+{% if sphinx_version >= min_version %}<dl class="py class" id="module-{{ module }}">{% else %}<span class="target" id="module-{{ module }}">
+{{ indent }}</span>
+{{ indent }}<dl class="py class">{% endif %}
+{%- endmacro -%}
+{% set permalink = ("Link" if sphinx_version >= (7, 2) else 'Permalink') -%}
 {% set heading = ("heading" if sphinx_version >= (5, 0) else 'headline') -%}
 {% set sig_prename_tag=("span" if sphinx_version >= (4, 0) else 'code') -%}
 {% set sig_object_class=(' class="sig sig-object py"' if sphinx_version >= (4, 0) else '') -%}
 {% set section = ("section", "section") if docutils_version >= (0, 17) else ('div class="section"', "div") -%}
 <!DOCTYPE html>
-<html{% if sphinx_version >= (5, 0) %} lang="en"{% endif %}>
+<html{% if sphinx_version >= (7, 2) %} data-content_root="./"{% endif %}{% if sphinx_version >= (5, 0) %} lang="en"{% endif %}>
  <head>
   <meta charset="utf-8"/>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   {% if docutils_version[1] == 18 %}<meta content="Docutils 0.18.1: http://docutils.sourceforge.net/" name="generator"/>
   {% elif docutils_version[1] == 17 %}<meta content="Docutils 0.17.1: http://docutils.sourceforge.net/" name="generator"/>
   {% elif docutils_version[1] == 19 %}<meta content="Docutils 0.19: https://docutils.sourceforge.io/" name="generator"/>
-  {% elif docutils_version[1] == 20 %}<meta content="width=device-width, initial-scale=1" name="viewport"/>
+  {% elif docutils_version[1] >= 20 %}<meta content="width=device-width, initial-scale=1" name="viewport"/>
   {% endif %}<title>
    sphinx-autofixture Demo — Python  documentation
-  </title>
-  <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js">
+  </title>{% if sphinx_version >= (7, 2) %}
+  <script src="_static/documentation_options.js">{% else %}
+  <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js{% if sphinx_version >= (7, 1) %}{% endif %}">{% endif %}
   </script>{% if sphinx_version < (6, 0) %}
   <script src="_static/jquery.js">
   </script>
@@ -41,7 +48,7 @@
       <{% if docutils_version >= (0, 17) %}section{% else %}div class="section"{% endif %} id="sphinx-autofixture-demo">
        <h1>
         sphinx-autofixture Demo
-        <a class="headerlink" href="#sphinx-autofixture-demo" title="Permalink to this {{ heading }}">
+        <a class="headerlink" href="#sphinx-autofixture-demo" title="{{ permalink }} to this {{ heading }}">
          ¶
         </a>
        </h1>
@@ -56,7 +63,7 @@
          <{{ sig_prename_tag }} class="sig-name descname">
           {{ span_pre("tmp_pathplus", "          ") }}
          </{{ sig_prename_tag }}>
-         <a class="headerlink" href="#coincidence.fixtures.tmp_pathplus" title="Permalink to this definition">
+         <a class="headerlink" href="#coincidence.fixtures.tmp_pathplus" title="{{ permalink }} to this definition">
           ¶
          </a>
         </dt>
@@ -149,9 +156,7 @@ created as a sub directory of the base temporary directory.
          </div>
         </dd>
        </dl>
-       <span class="target" id="module-tests.myproject">
-       </span>
-       <dl class="py class">
+       {{ span_target("tests.myproject", "       ")}}
         <dt{{ sig_object_class }} id="tests.myproject.A">
          <em class="property">
           {{ span_pre("class", "          ", (3, 5)) }}
@@ -162,7 +167,7 @@ created as a sub directory of the base temporary directory.
          <{{ sig_prename_tag }} class="sig-name descname">
           {{ span_pre("A", "          ") }}
          </{{ sig_prename_tag }}>
-         <a class="headerlink" href="#tests.myproject.A" title="Permalink to this definition">
+         <a class="headerlink" href="#tests.myproject.A" title="{{ permalink }} to this definition">
           ¶
          </a>
         </dt>
@@ -184,7 +189,7 @@ created as a sub directory of the base temporary directory.
             </span>{% else %}
             = {}{% endif %}
            </em>
-           <a class="headerlink" href="#tests.myproject.A.__dataclass_fields__" title="Permalink to this definition">
+           <a class="headerlink" href="#tests.myproject.A.__dataclass_fields__" title="{{ permalink }} to this definition">
             ¶
            </a>
           </dt>
@@ -205,7 +210,7 @@ created as a sub directory of the base temporary directory.
             </span>{% else %}
             = _DataclassParams(init=True,repr=True,eq=True,order=False,unsafe_hash=False,frozen=False{{ DataclassParams_end_args }}){% endif %}
            </em>
-           <a class="headerlink" href="#tests.myproject.A.__dataclass_params__" title="Permalink to this definition">
+           <a class="headerlink" href="#tests.myproject.A.__dataclass_params__" title="{{ permalink }} to this definition">
             ¶
            </a>
           </dt>
@@ -228,7 +233,7 @@ created as a sub directory of the base temporary directory.
            <span class="sig-paren">
             )
            </span>
-           <a class="headerlink" href="#tests.myproject.A.__eq__" title="Permalink to this definition">
+           <a class="headerlink" href="#tests.myproject.A.__eq__" title="{{ permalink }} to this definition">
             ¶
            </a>
           </dt>
@@ -252,7 +257,7 @@ created as a sub directory of the base temporary directory.
             </span>{% else %}
             = None{% endif %}
            </em>
-           <a class="headerlink" href="#tests.myproject.A.__hash__" title="Permalink to this definition">
+           <a class="headerlink" href="#tests.myproject.A.__hash__" title="{{ permalink }} to this definition">
             ¶
            </a>
           </dt>
@@ -285,7 +290,7 @@ created as a sub directory of the base temporary directory.
             None
            </span>{% else %}
            → None{% endif %}
-           <a class="headerlink" href="#tests.myproject.A.__init__" title="Permalink to this definition">
+           <a class="headerlink" href="#tests.myproject.A.__init__" title="{{ permalink }} to this definition">
             ¶
            </a>
           </dt>
@@ -309,7 +314,7 @@ created as a sub directory of the base temporary directory.
             </span>{% else %}
             = (){% endif %}
            </em>
-           <a class="headerlink" href="#tests.myproject.A.__match_args__" title="Permalink to this definition">
+           <a class="headerlink" href="#tests.myproject.A.__match_args__" title="{{ permalink }} to this definition">
             ¶
            </a>
           </dt>
@@ -330,7 +335,7 @@ created as a sub directory of the base temporary directory.
             </span>{% else %}
             = 'tests.myproject'{% endif %}
            </em>
-           <a class="headerlink" href="#tests.myproject.A.__module__" title="Permalink to this definition">
+           <a class="headerlink" href="#tests.myproject.A.__module__" title="{{ permalink }} to this definition">
             ¶
            </a>
           </dt>
@@ -348,7 +353,7 @@ created as a sub directory of the base temporary directory.
            <span class="sig-paren">
             )
            </span>
-           <a class="headerlink" href="#tests.myproject.A.__repr__" title="Permalink to this definition">
+           <a class="headerlink" href="#tests.myproject.A.__repr__" title="{{ permalink }} to this definition">
             ¶
            </a>
           </dt>
@@ -363,7 +368,7 @@ created as a sub directory of the base temporary directory.
            <{{ sig_prename_tag }} class="sig-name descname">
             {{ span_pre("__weakref__", "            ") }}
            </{{ sig_prename_tag }}>
-           <a class="headerlink" href="#tests.myproject.A.__weakref__" title="Permalink to this definition">
+           <a class="headerlink" href="#tests.myproject.A.__weakref__" title="{{ permalink }} to this definition">
             ¶
            </a>
           </dt>
@@ -389,7 +394,7 @@ created as a sub directory of the base temporary directory.
          <span class="sig-paren">
           )
          </span>
-         <a class="headerlink" href="#tests.myproject.baz" title="Permalink to this definition">
+         <a class="headerlink" href="#tests.myproject.baz" title="{{ permalink }} to this definition">
           ¶
          </a>
         </dt>
@@ -413,7 +418,7 @@ created as a sub directory of the base temporary directory.
          <span class="sig-paren">
           )
          </span>
-         <a class="headerlink" href="#tests.myproject.fizbuzz" title="Permalink to this definition">
+         <a class="headerlink" href="#tests.myproject.fizbuzz" title="{{ permalink }} to this definition">
           ¶
          </a>
         </dt>
@@ -423,7 +428,9 @@ created as a sub directory of the base temporary directory.
          </p>
         </dd>
        </dl>
-      </{% if docutils_version >= (0, 17) %}section{% else %}div{% endif %}>
+      </{% if docutils_version >= (0, 17) %}section{% else %}div{% endif %}>{% if sphinx_version >= (8, 1) %}
+      <div class="clearer">
+      </div>{% endif %}
      </div>
     </div>
    </div>

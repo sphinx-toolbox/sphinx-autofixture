@@ -20,6 +20,9 @@ min_coverage: 95
 python_versions:
  '3.7':
   matrix_exclude:
+   pytest:
+    - 8.3
+    - latest
    sphinx:
     - 6.0
     - 6.1
@@ -27,29 +30,123 @@ python_versions:
     - 7.0
     - 7.1
     - 7.2
+    - 7.3
+    - 7.4
+    - 8.0
+    - 8.1
+    - 8.2
+    - latest
  '3.8':
   matrix_exclude:
+   pytest:
+    - latest
    sphinx:
     - 7.2
- '3.9':
- '3.10':
- "3.11":
- "3.12":
- 3.13:
- pypy37:
+    - 7.3
+    - 7.4
+    - 8.0
+    - 8.1
+    - 8.2
+    - latest
+ 3.9:
   matrix_exclude:
    sphinx:
+    - 8.0
+    - 8.1
+    - 8.2
+ "3.10":
+  matrix_exclude:
+   sphinx:
+    - 8.2
+ "3.11":
+ "3.12":
+  matrix_exclude:
+   sphinx:
+    - 3.2
+    - 3.3
+    - 3.4
+    - 3.5
+    - 4.0
+    - 4.1
+    - 4.2
+    - 4.3
+ "3.13":
+  matrix_exclude:
+   sphinx:
+     - 3.2
+     - 3.3
+     - 3.4
+     - 3.5
+     - 4.0
+     - 4.1
+     - 4.2
+     - 4.3
+     - 4.4
+     - 4.5
+     - 5.0
+     - 5.1
+     - 5.2
+     - 5.3
+     - 6.0
+     - 6.1
+ pypy37:
+  matrix_exclude:
+   pytest:
+    - 8.3
+    - latest
+   sphinx:
+    - 3.2
+    - 3.3
+    - 3.4
+    - 3.5
+    - 4.0
+    - 4.1
+    - 4.2
     - 6.0
     - 6.1
     - 6.2
     - 7.0
     - 7.1
     - 7.2
+    - 7.3
+    - 7.4
+    - 8.0
+    - 8.1
+    - 8.2
+    - latest
  pypy38:
   matrix_exclude:
+   pytest:
+    - latest
    sphinx:
+    - 3.2
+    - 3.3
+    - 3.4
+    - 3.5
+    - 4.0
+    - 4.1
+    - 4.2
     - 7.2
+    - 7.3
+    - 7.4
+    - 8.0
+    - 8.1
+    - 8.2
+    - latest
  pypy39:
+  matrix_exclude:
+   sphinx:
+    - 3.2
+    - 3.3
+    - 3.4
+    - 3.5
+    - 4.0
+    - 4.1
+    - 4.2
+    - 8.0
+    - 8.1
+    - 8.2
+    - latest
 
 conda_channels:
  - conda-forge
@@ -79,7 +176,16 @@ third_party_version_matrix:
     - 6.2
     - 7.0
     - 7.1
-    # - 7.2
+    - 7.2
+    - 7.3
+    - 7.4
+    - 8.0
+    - 8.1
+    - 8.2
+  pytest:
+    - 7.4
+    - 8.3
+    - latest
 
 keywords:
   - sphinx
@@ -98,6 +204,4 @@ classifiers:
 
 exclude_files:
  - contributing
-
-tox_unmanaged:
- - testenv
+ - tox

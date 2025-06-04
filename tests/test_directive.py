@@ -1,16 +1,23 @@
 # stdlib
 import os
+import pathlib
 from pathlib import Path
 from typing import Any, Iterator, Tuple, Union, cast, no_type_check
 
 # 3rd party
 import pytest
+import sphinx
 from bs4 import BeautifulSoup, NavigableString, PageElement, Tag, element
 from coincidence import max_version, min_version, not_pypy, only_pypy, only_version
 from domdf_python_tools.paths import PathPlus
 from sphinx.application import Sphinx
-from sphinx.testing.path import path
 from sphinx_toolbox.testing import HTMLRegressionFixture
+
+if sphinx.version_info >= (7, 2):
+	path = pathlib.Path
+else:
+	# 3rd party
+	from sphinx.testing.path import path  # type: ignore[misc]
 
 pytest_plugins = "sphinx.testing.fixtures"
 

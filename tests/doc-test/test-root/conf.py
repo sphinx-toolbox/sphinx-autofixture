@@ -5,3 +5,4 @@ extensions = [
 		]
 
 package_root = "dummy_package"
+project = "Python"
