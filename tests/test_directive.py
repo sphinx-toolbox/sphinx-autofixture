@@ -38,7 +38,7 @@ def content(app: Sphinx) -> Iterator[Sphinx]:
 @pytest.fixture()
 def page(content: Any, request: Any) -> Iterator[BeautifulSoup]:
 	pagename = request.param
-	c = (content.outdir / pagename).read_text()
+	c = (content.outdir / pagename).read_text(encoding="UTF-8")
 
 	yield BeautifulSoup(c, "html5lib")
 
