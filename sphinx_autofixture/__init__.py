@@ -52,10 +52,10 @@ __all__ = ["FixtureDecoratorFinder", "FixtureDocumenter", "is_fixture", "setup"]
 
 try:  # pragma: no cover
 	# 3rd party
-	from _pytest.fixtures import FixtureFunctionDefinition
+	from _pytest.fixtures import FixtureFunctionDefinition  # type: ignore[attr-defined]
 except ImportError:  # pragma: no cover
 
-	class FixtureFunctionDefinition:
+	class FixtureFunctionDefinition:  # type: ignore[no-redef]
 		pass
 
 
