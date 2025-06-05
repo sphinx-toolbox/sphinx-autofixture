@@ -204,4 +204,7 @@ classifiers:
 
 exclude_files:
  - contributing
- - tox
+
+tox_unmanaged:
+ - testenv
+ - fixups
