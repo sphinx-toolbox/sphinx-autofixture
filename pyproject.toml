@@ -4,7 +4,7 @@ build-backend = "whey"
 
 [project]
 name = "sphinx-autofixture"
-version = "0.4.0"
+version = "0.4.1"
 description = "Sphinx autodocumenter for pytest fixtures."
 readme = "README.rst"
 keywords = [ "documentation", "pytest", "sphinx", "sphinx-extension",]
