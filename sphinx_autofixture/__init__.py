@@ -52,7 +52,7 @@ __all__ = ["FixtureDecoratorFinder", "FixtureDocumenter", "is_fixture", "setup"]
 
 try:  # pragma: no cover
 	# 3rd party
-	from _pytest.fixtures import FixtureFunctionDefinition  # type: ignore[attr-defined]
+	from _pytest.fixtures import FixtureFunctionDefinition
 except ImportError:  # pragma: no cover
 
 	class FixtureFunctionDefinition:  # type: ignore[no-redef]
@@ -169,7 +169,7 @@ class FixtureDocumenter(FunctionDocumenter):
 		"""
 
 		if isinstance(member, (FunctionType, FixtureFunctionDefinition)):
-			return is_fixture(member)[0]
+			return is_fixture(member)[0]  # type: ignore[arg-type]
 		else:  # pragma: no cover
 			return False
 

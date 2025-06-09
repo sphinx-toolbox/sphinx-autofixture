@@ -17,7 +17,7 @@ if sphinx.version_info >= (7, 2):
 	path = pathlib.Path
 else:
 	# 3rd party
-	from sphinx.testing.path import path  # type: ignore[misc]
+	from sphinx.testing.path import path  # type: ignore[assignment]
 
 pytest_plugins = "sphinx.testing.fixtures"
 
@@ -117,9 +117,9 @@ def test_output(
 def _get_alabaster_version() -> Tuple[int, int, int]:
 	try:
 		# 3rd party
-		import alabaster._version as alabaster  # type: ignore[import]
+		import alabaster._version as alabaster  # type: ignore[import-untyped]
 	except ImportError:
 		# 3rd party
-		import alabaster  # type: ignore[import]
+		import alabaster  # type: ignore[import-untyped]
 
 	return tuple(map(int, alabaster.__version__.split('.')))
