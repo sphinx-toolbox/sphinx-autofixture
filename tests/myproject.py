@@ -5,17 +5,18 @@ from typing import Any, Callable, Dict
 
 __all__ = ["baz", "fizbuzz"]
 
-if sys.version_info >= (3, 7):
-	# stdlib
-	import dataclasses
+# stdlib
+import dataclasses
 
-	@dataclasses.dataclass()
-	class A:
-		"""
+
+@dataclasses.dataclass()
+class A:
+	"""
 		My Dataclass
 		"""
 
-	__all__.append('A')
+
+__all__.append('A')
 
 
 def foo() -> Callable:
