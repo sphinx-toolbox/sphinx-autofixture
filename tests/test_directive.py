@@ -49,37 +49,25 @@ def original_datadir(request: Any) -> Path:
 	return PathPlus(os.path.splitext(request.module.__file__)[0] + '_')
 
 
+only_36 = only_version("3.6", reason="Output differs on 3.6")
+min_37 = min_version("3.7", reason="Output differs on 3.6")
+not_pypy_mark = not_pypy("Output differs on PyPy")
+only_pypy_mark = only_pypy("Output differs on PyPy")
+
+
 @pytest.mark.parametrize("page", ["index.html"], indirect=True)
 @pytest.mark.parametrize(
 		"version",
 		[
-				pytest.param(
-						"36",
-						marks=[
-								only_version("3.6", reason="Output differs on 3.6"),
-								not_pypy("Output differs on PyPy")
-								]
-						),
-				pytest.param(
-						"36-pypy",
-						marks=[
-								only_version("3.6", reason="Output differs on 3.6"),
-								only_pypy("Output differs on PyPy")
-								]
-						),
-				pytest.param(
-						"37-pypy",
-						marks=[
-								min_version("3.7", reason="Output differs on 3.7"),
-								only_pypy("Output differs on PyPy")
-								]
-						),
+				pytest.param("36", marks=[only_36, not_pypy_mark]),
+				pytest.param("36-pypy", marks=[only_36, only_pypy_mark]),
+				pytest.param("37-pypy", marks=[min_37, only_pypy_mark]),
 				pytest.param(
 						"37",
 						marks=[
-								min_version("3.7", reason="Output differs on 3.6"),
+								min_37,
 								max_version("3.9.99", reason="Output differs on 3.10"),
-								not_pypy("Output differs on PyPy"),
+								not_pypy_mark,
 								]
 						),
 				pytest.param("310", marks=min_version("3.10", reason="Output differs on 3.10")),

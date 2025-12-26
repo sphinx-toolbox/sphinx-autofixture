@@ -137,7 +137,7 @@ def is_fixture(function: Union[FunctionType, MethodType]) -> Tuple[bool, Optiona
 		return True, visitor.scope
 
 
-class FixtureDocumenter(FunctionDocumenter):
+class FixtureDocumenter(FunctionDocumenter):  # noqa: PRM002
 	"""
 	Sphinx autodoc :class:`~sphinx.ext.autodoc.Documenter` for documenting pytest fixtures.
 	"""

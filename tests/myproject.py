@@ -1,6 +1,5 @@
 # stdlib
 import builtins
-import sys
 from typing import Any, Callable, Dict
 
 __all__ = ["baz", "fizbuzz"]
