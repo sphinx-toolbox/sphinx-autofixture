@@ -68,10 +68,10 @@ only_pypy_mark = only_pypy("Output differs on PyPy")
 								min_37,
 								max_version("3.9.99", reason="Output differs on 3.10"),
 								not_pypy_mark,
-								]
+								],
 						),
 				pytest.param("310", marks=min_version("3.10", reason="Output differs on 3.10")),
-				]
+				],
 		)
 def test_output(
 		page: BeautifulSoup,

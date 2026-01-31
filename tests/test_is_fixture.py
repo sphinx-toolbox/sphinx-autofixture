@@ -64,7 +64,7 @@ def pytest_call_scoped() -> None:
 				pytest.param(pytest_attribute, "function", id="pytest_attribute"),
 				pytest.param(pytest_call, "function", id="pytest_call"),
 				pytest.param(pytest_call_scoped, "module", id="pytest_call_scoped"),
-				]
+				],
 		)
 def test_is_fixture(func: Union[FunctionType, MethodType], scope: str) -> None:
 	assert is_fixture(func) == (True, scope)
@@ -96,7 +96,7 @@ def decorated() -> None:
 				pytest.param(decorated, id="decorated"),
 				pytest.param(Class.method, id="Class.method"),
 				pytest.param(Class().method, id="Class().method"),
-				]
+				],
 		)
 def test_isnt_fixture(func: Union[FunctionType, MethodType]) -> None:
 	assert is_fixture(func) == (False, None)

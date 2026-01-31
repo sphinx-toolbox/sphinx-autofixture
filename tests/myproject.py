@@ -37,7 +37,7 @@ def create_fizbuzz():  # noqa: MAN002
 	locals = {"BUILTINS": builtins}  # noqa: A001  # pylint: disable=redefined-builtin
 	local_vars = ", ".join(locals.keys())
 
-	txt = f" def fizbuzz(): pass"
+	txt = " def fizbuzz(): pass"
 	txt = f"def __create_fn__({local_vars}):\n{txt}\n return fizbuzz"
 
 	ns: Dict[str, Any] = {}
